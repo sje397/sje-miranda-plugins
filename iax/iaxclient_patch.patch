@@ -1,0 +1,597 @@
+Index: lib/iaxclient_lib.c
+===================================================================
+--- lib/iaxclient_lib.c	(revision 666)
++++ lib/iaxclient_lib.c	(working copy)
+@@ -386,6 +386,7 @@
+     vsnprintf(buf, 1024, fmt, args);
+     va_end(args);
+ 
++	printf("jb_errf!\n");
+     iaxc_usermsg(IAXC_ERROR, buf);
+ }
+ 
+Index: lib/libiax2/src/iax.c
+===================================================================
+--- lib/libiax2/src/iax.c	(revision 666)
++++ lib/libiax2/src/iax.c	(working copy)
+@@ -839,7 +839,7 @@
+ {
+ 	/* Send the frame raw */
+ #ifdef DEBUG_SUPPORT
+-	if (ntohs(h->scallno) & IAX_FLAG_FULL)
++	if (ntohs(f->callno) & IAX_FLAG_FULL)
+ 		iax_showframe(f, NULL, 0, f->transfer ? 
+ 						&(f->session->transfer) :
+ 					&(f->session->peeraddr), f->datalen - sizeof(struct ast_iax2_full_hdr));
+@@ -1995,7 +1995,8 @@
+ 	/* Setup host connection */
+ 	hp = gethostbyname(hostname);
+ 	if (!hp) {
+-		snprintf(iax_errstr, sizeof(iax_errstr), "Invalid hostname: %s", hostname);
++		IAXERROR "Invalid hostname: %s", hostname);
++		DEBU(G "Invalid hostname: %s", hostname);
+ 		return -1;
+ 	}
+ 	memcpy(&session->peeraddr.sin_addr, hp->h_addr, sizeof(session->peeraddr.sin_addr));
+Index: lib/Makefile
+===================================================================
+--- lib/Makefile	(revision 666)
++++ lib/Makefile	(working copy)
+@@ -382,14 +382,14 @@
+ 	ar rs $(MSLIB) $(OBJS) 
+ 
+ 
+-#shared: CFLAGS := $(CFLAGS) $(DYNCFLAGS)
++shared: CFLAGS := $(CFLAGS) $(DYNCFLAGS)
+ #shared: clean libiaxclient.a
+-#shared: libiaxclient.a
+-#ifeq ($(OSTYPE),MACOSX)
+-#	$(CC) -single_module -dylib -dynamiclib -o $(DYNLIB) $(OBJS) $(DYNLDFLAGS) -framework CoreAudio -framework AudioToolbox -framework System -framework Carbon -framework AudioUnit portaudio/lib/libportaudio.a
+-#else
+-#	$(CC) -shared -o $(DYNLIB) $(OBJS) $(DYNLDFLAGS)
+-#endif
++shared: libiaxclient.a
++ifeq ($(OSTYPE),MACOSX)
++	$(CC) -single_module -dylib -dynamiclib -o $(DYNLIB) $(OBJS) $(DYNLDFLAGS) -framework CoreAudio -framework AudioToolbox -framework System -framework Carbon -framework AudioUnit portaudio/lib/libportaudio.a
++else
++	$(CC) -shared -o $(DYNLIB) $(OBJS) $(DYNLDFLAGS)
++endif
+ 
+ 
+ 
+Index: lib/win/vs2005/iaxclient_dll.vcproj
+===================================================================
+--- lib/win/vs2005/iaxclient_dll.vcproj	(revision 666)
++++ lib/win/vs2005/iaxclient_dll.vcproj	(working copy)
+@@ -46,7 +46,7 @@
+ 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_WINDLL;_USRDLL;BUILDING_DLL;PA_NO_DS;PA_NO_ASIO;SPEEX_PREPROCESS=1;NEWJB;LIBIAX;SPEEX_EC=1;inline=__inline;strncasecmp=strnicmp;vsnprintf=_vsnprintf"
+ 				MinimalRebuild="true"
+ 				BasicRuntimeChecks="3"
+-				RuntimeLibrary="3"
++				RuntimeLibrary="1"
+ 				RuntimeTypeInfo="false"
+ 				PrecompiledHeaderFile=""
+ 				AssemblerListingLocation="$(IntDir)/"
+@@ -143,7 +143,7 @@
+ 				Optimization="4"
+ 				AdditionalIncludeDirectories="..\..,..\..\gsm\inc,..\..\portaudio\include,..\..\portaudio\src\common,..\..\portaudio\pablio,..\..\portmixer\px_common,..\..\libspeex\include,..\..\libiax2\src,..\..\wince"
+ 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_WINDLL;_USRDLL;BUILDING_DLL;PA_NO_DS;PA_NO_ASIO;SPEEX_PREPROCESS=1;NEWJB;LIBIAX;SPEEX_EC=1;inline=__inline;strncasecmp=strnicmp;vsnprintf=_vsnprintf"
+-				RuntimeLibrary="2"
++				RuntimeLibrary="0"
+ 				PrecompiledHeaderFile=""
+ 				AssemblerListingLocation="$(IntDir)/"
+ 				ObjectFile="$(IntDir)/"
+@@ -237,6 +237,10 @@
+ 				>
+ 			</File>
+ 			<File
++				RelativePath="..\..\codec_ilbc.c"
++				>
++			</File>
++			<File
+ 				RelativePath="..\..\codec_speex.c"
+ 				>
+ 			</File>
+@@ -302,6 +306,10 @@
+ 				>
+ 			</File>
+ 			<File
++				RelativePath="..\..\codec_ilbc.h"
++				>
++			</File>
++			<File
+ 				RelativePath="..\..\codec_speex.h"
+ 				>
+ 			</File>
+@@ -594,7 +602,7 @@
+ 			Filter="cpp;h"
+ 			>
+ 			<File
+-				RelativePath="..\..\portmixer\px_win_wmme\px_win_wmme.cpp"
++				RelativePath="..\..\portmixer\px_win_wmme\px_win_wmme.c"
+ 				>
+ 				<FileConfiguration
+ 					Name="Debug|Win32"
+@@ -855,6 +863,202 @@
+ 				>
+ 			</File>
+ 		</Filter>
++		<Filter
++			Name="iLBC"
++			>
++			<File
++				RelativePath="..\..\iLBC\anaFilter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\anaFilter.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\constants.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\constants.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\createCB.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\createCB.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\doCPLC.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\doCPLC.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\enhancer.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\enhancer.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\filter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\filter.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\FrameClassify.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\FrameClassify.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\gainquant.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\gainquant.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\getCBvec.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\getCBvec.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\helpfun.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\helpfun.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpInput.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpInput.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpOutput.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpOutput.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBConstruct.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBConstruct.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBSearch.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBSearch.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_decode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_decode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_define.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_encode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_encode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_test.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCdecode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCdecode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCencode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCencode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\lsf.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\lsf.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\packing.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\packing.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateConstructW.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateConstructW.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateSearchW.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateSearchW.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\syntFilter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\syntFilter.h"
++				>
++			</File>
++		</Filter>
+ 	</Files>
+ 	<Globals>
+ 	</Globals>
+Index: lib/win/vs2005/iaxclient_lib.vcproj
+===================================================================
+--- lib/win/vs2005/iaxclient_lib.vcproj	(revision 666)
++++ lib/win/vs2005/iaxclient_lib.vcproj	(working copy)
+@@ -43,10 +43,10 @@
+ 				Name="VCCLCompilerTool"
+ 				Optimization="0"
+ 				AdditionalIncludeDirectories="..\..,..\..\gsm\inc,..\..\portaudio\include,..\..\portaudio\src\common,..\..\portaudio\pablio,..\..\portmixer\px_common,..\..\libspeex\include,..\..\libiax2\src,..\..\wince"
+-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_LIB;PA_NO_DS;PA_NO_ASIO;SPEEX_PREPROCESS=1;NEWJB;LIBIAX;SPEEX_EC=1;inline=__inline;strncasecmp=strnicmp;vsnprintf=_vsnprintf"
++				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_LIB;PA_NO_DS;PA_NO_ASIO;SPEEX_PREPROCESS=1;NEWJB;LIBIAX;SPEEX_EC=1;inline=__inline;strncasecmp=strnicmp;vsnprintf=_vsnprintf;DEBUG_SUPPORT"
+ 				MinimalRebuild="true"
+ 				BasicRuntimeChecks="3"
+-				RuntimeLibrary="3"
++				RuntimeLibrary="1"
+ 				RuntimeTypeInfo="false"
+ 				PrecompiledHeaderFile=""
+ 				AssemblerListingLocation="$(IntDir)/"
+@@ -57,7 +57,6 @@
+ 				SuppressStartupBanner="true"
+ 				Detect64BitPortabilityProblems="false"
+ 				DebugInformationFormat="3"
+-				CallingConvention="2"
+ 				CompileAs="1"
+ 			/>
+ 			<Tool
+@@ -122,9 +121,18 @@
+ 			<Tool
+ 				Name="VCCLCompilerTool"
+ 				Optimization="4"
++				FavorSizeOrSpeed="0"
++				WholeProgramOptimization="false"
+ 				AdditionalIncludeDirectories="..\..,..\..\gsm\inc,..\..\portaudio\include,..\..\portaudio\src\common,..\..\portaudio\pablio,..\..\portmixer\px_common,..\..\libspeex\include,..\..\libiax2\src,..\..\wince"
+ 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_LIB;PA_NO_DS;PA_NO_ASIO;SPEEX_PREPROCESS=1;NEWJB;LIBIAX;SPEEX_EC=1;inline=__inline;strncasecmp=strnicmp;vsnprintf=_vsnprintf"
+-				RuntimeLibrary="2"
++				StringPooling="true"
++				ExceptionHandling="0"
++				BasicRuntimeChecks="0"
++				RuntimeLibrary="0"
++				BufferSecurityCheck="false"
++				EnableFunctionLevelLinking="true"
++				EnableEnhancedInstructionSet="1"
++				FloatingPointModel="2"
+ 				PrecompiledHeaderFile=""
+ 				AssemblerListingLocation="$(IntDir)/"
+ 				ObjectFile="$(IntDir)/"
+@@ -132,7 +140,6 @@
+ 				BrowseInformation="0"
+ 				WarningLevel="0"
+ 				SuppressStartupBanner="true"
+-				CallingConvention="2"
+ 				CompileAs="1"
+ 			/>
+ 			<Tool
+@@ -547,7 +554,7 @@
+ 			Filter="cpp;h"
+ 			>
+ 			<File
+-				RelativePath="..\..\portmixer\px_win_wmme\px_win_wmme.cpp"
++				RelativePath="..\..\portmixer\px_win_wmme\px_win_wmme.c"
+ 				>
+ 				<FileConfiguration
+ 					Name="Debug|Win32"
+@@ -808,6 +815,202 @@
+ 				>
+ 			</File>
+ 		</Filter>
++		<Filter
++			Name="iLBC"
++			>
++			<File
++				RelativePath="..\..\iLBC\anaFilter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\anaFilter.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\constants.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\constants.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\createCB.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\createCB.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\doCPLC.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\doCPLC.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\enhancer.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\enhancer.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\filter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\filter.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\FrameClassify.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\FrameClassify.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\gainquant.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\gainquant.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\getCBvec.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\getCBvec.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\helpfun.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\helpfun.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpInput.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpInput.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpOutput.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\hpOutput.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBConstruct.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBConstruct.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBSearch.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iCBSearch.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_decode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_decode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_define.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_encode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_encode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\iLBC_test.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCdecode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCdecode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCencode.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\LPCencode.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\lsf.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\lsf.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\packing.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\packing.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateConstructW.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateConstructW.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateSearchW.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\StateSearchW.h"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\syntFilter.c"
++				>
++			</File>
++			<File
++				RelativePath="..\..\iLBC\syntFilter.h"
++				>
++			</File>
++		</Filter>
+ 	</Files>
+ 	<Globals>
+ 	</Globals>
+Index: lib/winfuncs.c
+===================================================================
+--- lib/winfuncs.c	(revision 666)
++++ lib/winfuncs.c	(working copy)
+@@ -85,7 +85,9 @@
+ }
+ 
+ int iaxc_prioboostend() {
+-    /* TODO */
++    if ( !SetThreadPriority(GetCurrentThread(),THREAD_PRIORITY_NORMAL)  ) {
++        fprintf(stderr, "SetThreadPriority failed: %ld.\n", GetLastError());
++    }
+     return 0;
+ }
+ 

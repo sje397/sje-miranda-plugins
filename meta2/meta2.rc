@@ -1,0 +1,222 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <windows.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT1 DIALOGEX 0, 0, 246, 179
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_PRIORITIES DIALOGEX 0, 0, 266, 157
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Subcontact Priorities",IDC_STATIC,7,7,252,143
+    EDITTEXT        IDC_ED_PRIORITY,157,78,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SP_PRIORITY,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,195,78,11,14
+    RTEXT           "Rank:",IDC_STATIC,42,81,49,8
+    RTEXT           "Status:",IDC_STATIC,30,57,61,8
+    COMBOBOX        IDC_CMB_STATUS,98,53,112,86,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Protocol:",IDC_STATIC,30,31,61,8
+    COMBOBOX        IDC_CMB_PROTOCOL,98,28,112,100,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Reset All",IDC_BTN_RESET,87,119,91,14
+    CONTROL         "Default",IDC_CHK_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,81,58,10
+    CTEXT           "(Lower ranks are preferred)",IDC_STATIC,51,99,162,8
+END
+
+IDD_METASELECT DIALOGEX 0, 0, 256, 259
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Select MetaContact"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "Please select a MetaContact:",IDC_STATIC,27,11,201,14
+    DEFPUSHBUTTON   "&Ok",IDOK,73,238,48,14,WS_DISABLED
+    PUSHBUTTON      "&Cancel",IDCANCEL,133,238,48,14
+    LISTBOX         IDC_METALIST,44,28,168,168,LBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    CONTROL         "Sort Alphabetically",IDC_CHK_SRT,"Button",BS_AUTOCHECKBOX | BS_VCENTER | WS_TABSTOP,78,210,124,13
+END
+
+IDD_METAEDIT DIALOGEX 0, 0, 311, 260
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_STATICEDGE
+CAPTION "Edit MetaContact"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,70,241,50,14,WS_DISABLED
+    PUSHBUTTON      "&Cancel",IDCANCEL,130,241,50,14
+    LTEXT           "Name:",IDC_STATIC,55,26,42,8
+    GROUPBOX        "Information",IDC_STATIC,5,4,299,45
+    GROUPBOX        "Contacts",IDC_STATIC,5,54,299,180
+    DEFPUSHBUTTON   "&Apply",IDC_VALIDATE,190,241,50,14,WS_DISABLED
+    PUSHBUTTON      "&Remove",IDC_BTN_REM,103,214,50,14,WS_DISABLED
+    PUSHBUTTON      "&Set as Default",IDC_BTN_SETDEFAULT,157,214,50,14,WS_DISABLED
+    EDITTEXT        IDC_ED_NAME,96,24,160,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "List1",IDC_LST_CONTACTS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,13,66,283,142,WS_EX_CLIENTEDGE
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <windows.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_METASELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 247
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 252
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral (Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_HISTIMPORT DIALOGEX 0, 0, 279, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Import Contacts"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,90,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,147,180,50,14
+    LTEXT           "Old-style MetaContacts have been detected in your database. Press 'OK' to import these contacts, or press cancel to ignore them.\n\nImporting history may take a while.",IDC_STATIC,53,23,178,63
+    CONTROL         "Import history from old MetaContacts into new ones",IDC_RAD_HISTMETA,
+                    "Button",BS_AUTORADIOBUTTON,52,106,212,10
+    CONTROL         "Merge subcontact history into new MetaContact history",IDC_RAD_HISTSUB,
+                    "Button",BS_AUTORADIOBUTTON,52,126,212,10
+    CONTROL         "Do not import history",IDC_RAD_HISTNONE,"Button",BS_AUTORADIOBUTTON,52,147,212,10
+END
+
+IDD_COPYPROGRESS DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "History Copy"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Progress1",IDC_PROG,"msctls_progress32",0x0,28,53,130,13
+    CTEXT           "Please wait while the contact's history is copied.",IDC_STATIC,9,13,167,8
+    CTEXT           "",IDC_ED_MESSAGE,10,30,167,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_HISTIMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MCSETDEFAULT        ICON                    "icons\\meta_set_as_default.ico"
+IDI_MCMENU              ICON                    "icons\\mcmenu.ico"
+IDI_MCMENUOFF           ICON                    "icons\\mcmenuof.ico"
+IDI_MCMENUOFF2          ICON                    "icons\\mcmenuoff2.ico"
+IDI_MCADD               ICON                    "icons\\meta_add.ico"
+IDI_MCCONVERT           ICON                    "icons\\meta_convert.ico"
+IDI_MCEDIT              ICON                    "icons\\meta_edit.ico"
+IDI_MCREMOVE            ICON                    "icons\\meta_remove2.ico"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

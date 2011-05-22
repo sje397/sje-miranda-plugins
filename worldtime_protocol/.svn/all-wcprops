@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/522/worldtime_protocol
+END
+worldtimeproto.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mim_plugs/!svn/ver/488/worldtime_protocol/worldtimeproto.dsp
+END
+time_convert.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mim_plugs/!svn/ver/24/worldtime_protocol/time_convert.cpp
+END
+timezone.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/489/worldtime_protocol/timezone.h
+END
+worldtimeproto.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/mim_plugs/!svn/ver/487/worldtime_protocol/worldtimeproto.h
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/441/worldtime_protocol/options.h
+END
+time_convert.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mim_plugs/!svn/ver/24/worldtime_protocol/time_convert.h
+END
+icon_proto.ico
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mim_plugs/!svn/ver/522/worldtime_protocol/icon_proto.ico
+END
+worldtimeproto_9.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/mim_plugs/!svn/ver/522/worldtime_protocol/worldtimeproto_9.vcproj
+END
+worldtimeproto.sln
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mim_plugs/!svn/ver/441/worldtime_protocol/worldtimeproto.sln
+END
+worldtimeproto.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/mim_plugs/!svn/ver/24/worldtime_protocol/worldtimeproto.dsw
+END
+worldtimeproto.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mim_plugs/!svn/ver/488/worldtime_protocol/worldtimeproto.vcproj
+END
+time_display.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/mim_plugs/!svn/ver/490/worldtime_protocol/time_display.cpp
+END
+timezone_list.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/mim_plugs/!svn/ver/489/worldtime_protocol/timezone_list.cpp
+END
+time_display.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mim_plugs/!svn/ver/487/worldtime_protocol/time_display.h
+END
+WorldTime.rc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/492/worldtime_protocol/WorldTime.rc
+END
+worldtimeproto.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mim_plugs/!svn/ver/491/worldtime_protocol/worldtimeproto.cpp
+END
+timezone_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mim_plugs/!svn/ver/489/worldtime_protocol/timezone_list.h
+END
+timezone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/489/worldtime_protocol/timezone.cpp
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/mim_plugs/!svn/ver/522/worldtime_protocol/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/492/worldtime_protocol/resource.h
+END
+worldtimeproto_9.sln
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/mim_plugs/!svn/ver/488/worldtime_protocol/worldtimeproto_9.sln
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/493/worldtime_protocol/common.h
+END

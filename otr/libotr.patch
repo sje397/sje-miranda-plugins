@@ -1,0 +1,611 @@
+? Makefile
+? Makefile.in
+? aclocal.m4
+? autom4te.cache
+? config.guess
+? config.h
+? config.h.in
+? config.log
+? config.status
+? config.sub
+? configure
+? depcomp
+? install-sh
+? libotr.patch
+? libtool
+? ltmain.sh
+? missing
+? stamp-h1
+? src/.deps
+? src/.libs
+? src/Makefile
+? src/Makefile.in
+? src/auth.lo
+? src/b64.lo
+? src/context.lo
+? src/dh.lo
+? src/libotr.la
+? src/mem.lo
+? src/message.lo
+? src/privkey.lo
+? src/proto.lo
+? src/tlv.lo
+? src/userstate.lo
+? toolkit/.deps
+? toolkit/.libs
+? toolkit/Makefile
+? toolkit/Makefile.in
+Index: src/auth.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/auth.c,v
+retrieving revision 1.4
+diff -u -p -r1.4 auth.c
+--- src/auth.c	9 Feb 2006 15:19:56 -0000	1.4
++++ src/auth.c	7 Feb 2007 22:56:25 -0000
+@@ -120,7 +120,7 @@ gcry_error_t otrl_auth_start_v2(OtrlAuth
+ 
+     /* Allocate space for the encrypted g^x */
+     gcry_mpi_print(format, NULL, 0, &npub, auth->our_dh.pub);
+-    auth->encgx = malloc(4+npub);
++    auth->encgx = (unsigned char*)malloc(4+npub);
+     if (auth->encgx == NULL) goto memerr;
+     auth->encgx_len = 4+npub;
+     bufp = auth->encgx;
+@@ -152,7 +152,7 @@ gcry_error_t otrl_auth_start_v2(OtrlAuth
+ 
+     /* Now serialize the message */
+     lenp = 3 + 4 + auth->encgx_len + 4 + 32;
+-    bufp = malloc(lenp);
++    bufp = (unsigned char*)malloc(lenp);
+     if (bufp == NULL) goto memerr;
+     buf = bufp;
+     buflen = lenp;
+@@ -206,7 +206,7 @@ static gcry_error_t create_key_message(O
+ 
+     gcry_mpi_print(format, NULL, 0, &npub, auth->our_dh.pub);
+     buflen = 3 + 4 + npub;
+-    buf = malloc(buflen);
++    buf = (unsigned char*)malloc(buflen);
+     if (buf == NULL) goto memerr;
+     bufp = buf;
+     lenp = buflen;
+@@ -261,7 +261,7 @@ gcry_error_t otrl_auth_handle_commit(Otr
+     /* Encrypted g^x */
+     read_int(enclen);
+     require_len(enclen);
+-    encbuf = malloc(enclen);
++    encbuf = (unsigned char*)malloc(enclen);
+     if (encbuf == NULL && enclen > 0) goto memerr;
+     memmove(encbuf, bufp, enclen);
+     bufp += enclen; lenp -= enclen;
+@@ -373,7 +373,7 @@ static gcry_error_t calculate_pubkey_aut
+     /* How big is the total structure to be MAC'd? */
+     totallen = 4 + ourpublen + 4 + theirpublen + 2 + privkey->pubkey_datalen
+ 	+ 4;
+-    buf = malloc(totallen);
++    buf = (unsigned char*)malloc(totallen);
+     if (buf == NULL) goto memerr;
+ 
+     bufp = buf;
+@@ -407,7 +407,7 @@ static gcry_error_t calculate_pubkey_aut
+ 
+     /* Calculate the total size of the structure to be encrypted */
+     totallen = 2 + privkey->pubkey_datalen + 4 + siglen;
+-    buf = malloc(totallen);
++    buf = (unsigned char*)malloc(totallen);
+     if (buf == NULL) goto memerr;
+     bufp = buf;
+     lenp = totallen;
+@@ -512,7 +512,7 @@ static gcry_error_t check_pubkey_auth(un
+     /* Now calculate the message to be MAC'd. */
+     totallen = 4 + ourpublen + 4 + theirpublen + 2 +
+ 	(fingerprintend - fingerprintstart) + 4;
+-    buf = malloc(totallen);
++    buf = (unsigned char*)malloc(totallen);
+     if (buf == NULL) goto memerr;
+ 
+     bufp = buf;
+@@ -582,7 +582,7 @@ static gcry_error_t create_revealsig_mes
+     if (err) goto err;
+ 
+     buflen = 3 + 4 + 16 + 4 + authlen + 20;
+-    buf = malloc(buflen);
++    buf = (unsigned char*)malloc(buflen);
+     if (buf == NULL) goto memerr;
+ 
+     bufp = buf;
+@@ -654,7 +654,7 @@ static gcry_error_t create_signature_mes
+     if (err) goto err;
+ 
+     buflen = 3 + 4 + authlen + 20;
+-    buf = malloc(buflen);
++    buf = (unsigned char*)malloc(buflen);
+     if (buf == NULL) goto memerr;
+ 
+     bufp = buf;
+@@ -844,7 +844,7 @@ gcry_error_t otrl_auth_handle_revealsig(
+ 
+     switch(auth->authstate) {
+ 	case OTRL_AUTHSTATE_AWAITING_REVEALSIG:
+-	    gxbuf = malloc(auth->encgx_len);
++	    gxbuf = (unsigned char*)malloc(auth->encgx_len);
+ 	    if (auth->encgx_len && gxbuf == NULL) goto memerr;
+ 
+ 	    /* Use r to decrypt the value of g^x we received earlier */
+@@ -1080,7 +1080,7 @@ static gcry_error_t create_v1_key_exchan
+     gcry_mpi_print(format, NULL, 0, &ourpublen, auth->our_dh.pub);
+ 
+     totallen = 3 + 1 + privkey->pubkey_datalen + 4 + 4 + ourpublen + 40;
+-    buf = malloc(totallen);
++    buf = (unsigned char*)malloc(totallen);
+     if (buf == NULL) goto memerr;
+ 
+     bufp = buf;
+Index: src/b64.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/b64.c,v
+retrieving revision 1.2
+diff -u -p -r1.2 b64.c
+--- src/b64.c	16 Oct 2005 15:51:11 -0000	1.2
++++ src/b64.c	7 Feb 2007 22:56:25 -0000
+@@ -151,7 +151,7 @@ static size_t decode(unsigned char *out,
+  * The buffer data must contain at least (base64len / 4) * 3 bytes of
+  * space.  This function will return the number of bytes actually used.
+  */
+-size_t otrl_base64_decode(char *data, const unsigned char *base64data,
++size_t otrl_base64_decode(unsigned char *data, const unsigned char *base64data,
+ 	size_t base64len)
+ {
+     size_t datalen = 0;
+@@ -199,7 +199,7 @@ char *otrl_base64_otr_encode(const unsig
+ 
+     /* Make the base64-encoding. */
+     base64len = ((buflen + 2) / 3) * 4;
+-    base64buf = malloc(5 + base64len + 1 + 1);
++    base64buf = (char*)malloc(5 + base64len + 1 + 1);
+     if (base64buf == NULL) {
+ 	return NULL;
+     }
+@@ -237,11 +237,11 @@ int otrl_base64_otr_decode(const char *m
+ 
+     /* Base64-decode the message */
+     rawlen = ((msglen-5) / 4) * 3;   /* maximum possible */
+-    rawmsg = malloc(rawlen);
++    rawmsg = (unsigned char*)malloc(rawlen);
+     if (!rawmsg && rawlen > 0) {
+ 	return -1;
+     }
+-    rawlen = otrl_base64_decode(rawmsg, otrtag+5, msglen-5);  /* actual size */
++    rawlen = otrl_base64_decode(rawmsg, (unsigned char*)otrtag+5, msglen-5);  /* actual size */
+ 
+     *bufp = rawmsg;
+     *lenp = rawlen;
+Index: src/b64.h
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/b64.h,v
+retrieving revision 1.2
+diff -u -p -r1.2 b64.h
+--- src/b64.h	16 Oct 2005 15:51:11 -0000	1.2
++++ src/b64.h	7 Feb 2007 22:56:25 -0000
+@@ -36,7 +36,7 @@ size_t otrl_base64_encode(char *base64da
+  * The buffer data must contain at least (base64len / 4) * 3 bytes of
+  * space.  This function will return the number of bytes actually used.
+  */
+-size_t otrl_base64_decode(char *data, const unsigned char *base64data,
++size_t otrl_base64_decode(unsigned char *data, const unsigned char *base64data,
+ 	size_t base64len);
+ 
+ /*
+Index: src/context.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/context.c,v
+retrieving revision 1.6
+diff -u -p -r1.6 context.c
+--- src/context.c	19 Oct 2005 17:24:57 -0000	1.6
++++ src/context.c	7 Feb 2007 22:56:26 -0000
+@@ -32,7 +32,7 @@ static ConnContext * new_context(const c
+ 	const char * protocol)
+ {
+     ConnContext * context;
+-    context = malloc(sizeof(*context));
++    context = (ConnContext*)malloc(sizeof(*context));
+     assert(context != NULL);
+     context->username = strdup(user);
+     context->accountname = strdup(accountname);
+@@ -140,9 +140,9 @@ Fingerprint *otrl_context_find_fingerpri
+     /* Didn't find it. */
+     if (add_if_missing) {
+ 	if (addedp) *addedp = 1;
+-	f = malloc(sizeof(*f));
++	f = (Fingerprint*)malloc(sizeof(*f));
+ 	assert(f != NULL);
+-	f->fingerprint = malloc(20);
++	f->fingerprint = (unsigned char *)malloc(20);
+ 	assert(f->fingerprint != NULL);
+ 	memmove(f->fingerprint, fingerprint, 20);
+ 	f->context = context;
+@@ -178,7 +178,7 @@ void otrl_context_set_preshared_secret(C
+     context->preshared_secret_len = 0;
+ 
+     if (secret_len) {
+-	context->preshared_secret = malloc(secret_len);
++	context->preshared_secret = (unsigned char*)malloc(secret_len);
+ 	if (context->preshared_secret) {
+ 	    memmove(context->preshared_secret, secret, secret_len);
+ 	    context->preshared_secret_len = secret_len;
+Index: src/dh.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/dh.c,v
+retrieving revision 1.4
+diff -u -p -r1.4 dh.c
+--- src/dh.c	16 Oct 2005 15:51:11 -0000	1.4
++++ src/dh.c	7 Feb 2007 22:56:26 -0000
+@@ -49,8 +49,8 @@ static gcry_mpi_t DH1536_GENERATOR = NUL
+  */
+ void otrl_dh_init(void)
+ {
+-    gcry_mpi_scan(&DH1536_MODULUS, GCRYMPI_FMT_HEX, DH1536_MODULUS_S, 0, NULL);
+-    gcry_mpi_scan(&DH1536_GENERATOR, GCRYMPI_FMT_HEX, DH1536_GENERATOR_S,
++    gcry_mpi_scan(&DH1536_MODULUS, GCRYMPI_FMT_HEX, (unsigned char*)DH1536_MODULUS_S, 0, NULL);
++    gcry_mpi_scan(&DH1536_GENERATOR, GCRYMPI_FMT_HEX, (unsigned char*)DH1536_GENERATOR_S,
+ 	    0, NULL);
+     DH1536_MODULUS_MINUS_2 = gcry_mpi_new(DH1536_MOD_LEN_BITS);
+     gcry_mpi_sub_ui(DH1536_MODULUS_MINUS_2, DH1536_MODULUS, 2);
+@@ -102,7 +102,7 @@ gcry_error_t otrl_dh_gen_keypair(unsigne
+     }
+ 
+     /* Generate the secret key: a random 320-bit value */
+-    secbuf = gcry_random_bytes_secure(40, GCRY_STRONG_RANDOM);
++    secbuf = (unsigned char*)gcry_random_bytes_secure(40, GCRY_STRONG_RANDOM);
+     gcry_mpi_scan(&privkey, GCRYMPI_FMT_USG, secbuf, 40, NULL);
+     gcry_free(secbuf);
+ 
+@@ -140,7 +140,7 @@ gcry_error_t otrl_dh_session(DH_sesskeys
+ 
+     /* Output it in the right format */
+     gcry_mpi_print(GCRYMPI_FMT_USG, NULL, 0, &gablen, gab);
+-    gabdata = gcry_malloc_secure(gablen + 5);
++    gabdata = (unsigned char*)gcry_malloc_secure(gablen + 5);
+     if (!gabdata) {
+ 	gcry_mpi_release(gab);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -152,7 +152,7 @@ gcry_error_t otrl_dh_session(DH_sesskeys
+     gcry_mpi_print(GCRYMPI_FMT_USG, gabdata+5, gablen, NULL, gab);
+     gcry_mpi_release(gab);
+ 
+-    hashdata = gcry_malloc_secure(20);
++    hashdata = (unsigned char*)gcry_malloc_secure(20);
+     if (!hashdata) {
+ 	gcry_free(gabdata);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -253,7 +253,7 @@ gcry_error_t otrl_dh_compute_v2_auth_key
+ 
+     /* Output it in the right format */
+     gcry_mpi_print(GCRYMPI_FMT_USG, NULL, 0, &slen, s);
+-    sdata = gcry_malloc_secure(slen + 5);
++    sdata = (unsigned char*)gcry_malloc_secure(slen + 5);
+     if (!sdata) {
+ 	gcry_mpi_release(s);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -266,7 +266,7 @@ gcry_error_t otrl_dh_compute_v2_auth_key
+     gcry_mpi_release(s);
+ 
+     /* Calculate the session id */
+-    hashdata = gcry_malloc_secure(32);
++    hashdata = (unsigned char*)gcry_malloc_secure(32);
+     if (!hashdata) {
+ 	gcry_free(sdata);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -378,7 +378,7 @@ gcry_error_t otrl_dh_compute_v1_session_
+ 
+     /* Output it in the right format */
+     gcry_mpi_print(GCRYMPI_FMT_USG, NULL, 0, &slen, s);
+-    sdata = gcry_malloc_secure(slen + 5);
++    sdata = (unsigned char*)gcry_malloc_secure(slen + 5);
+     if (!sdata) {
+ 	gcry_mpi_release(s);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -391,7 +391,7 @@ gcry_error_t otrl_dh_compute_v1_session_
+     gcry_mpi_release(s);
+ 
+     /* Calculate the session id */
+-    hashdata = gcry_malloc_secure(20);
++    hashdata = (unsigned char*)gcry_malloc_secure(20);
+     if (!hashdata) {
+ 	gcry_free(sdata);
+ 	return gcry_error(GPG_ERR_ENOMEM);
+Index: src/message.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/message.c,v
+retrieving revision 1.9
+diff -u -p -r1.9 message.c
+--- src/message.c	31 Dec 2005 04:39:52 -0000	1.9
++++ src/message.c	7 Feb 2007 22:56:28 -0000
+@@ -125,7 +125,7 @@ gcry_error_t otrl_message_sending(OtrlUs
+ 			    "private conversation...")) && ops->notify) {
+ 		    const char *format = "You attempted to send an "
+ 			"unencrypted message to %s";
+-		    char *primary = malloc(strlen(format) +
++		    char *primary = (char *)malloc(strlen(format) +
+ 			    strlen(recipient) - 1);
+ 		    if (primary) {
+ 			sprintf(primary, format, recipient);
+@@ -140,7 +140,7 @@ gcry_error_t otrl_message_sending(OtrlUs
+ 			free(primary);
+ 		    }
+ 		}
+-		context->lastmessage = gcry_malloc_secure(strlen(message) + 1);
++		context->lastmessage = (char *)gcry_malloc_secure(strlen(message) + 1);
+ 		if (context->lastmessage) {
+ 		    char *bettermsg = otrl_proto_default_query_msg(accountname,
+ 			    policy);
+@@ -165,7 +165,7 @@ gcry_error_t otrl_message_sending(OtrlUs
+ 			strlen(OTRL_MESSAGE_TAG_V1) : 0;
+ 		    size_t v2taglen = (policy & OTRL_POLICY_ALLOW_V2) ?
+ 			strlen(OTRL_MESSAGE_TAG_V2) : 0;
+-		    char *taggedmsg = malloc(msglen + basetaglen + v1taglen
++		    char *taggedmsg = (char *)malloc(msglen + basetaglen + v1taglen
+ 			    +v2taglen + 1);
+ 		    if (taggedmsg) {
+ 			strcpy(taggedmsg, message);
+@@ -223,7 +223,7 @@ gcry_error_t otrl_message_sending(OtrlUs
+ 			"it.")) && ops->notify) {
+ 		const char *fmt = "%s has already closed his private "
+ 		    "connection to you";
+-		char *primary = malloc(strlen(fmt) + strlen(recipient) - 1);
++		char *primary = (char *)malloc(strlen(fmt) + strlen(recipient) - 1);
+ 		if (primary) {
+ 		    sprintf(primary, fmt, recipient);
+ 		    ops->notify(opdata, OTRL_NOTIFY_ERROR, 
+@@ -269,7 +269,7 @@ static gcry_error_t send_or_error_auth(c
+ 		strerr = gcry_strerror(err);
+ 		break;
+ 	}
+-	buf = malloc(strlen(buf_format) + strlen(strerr) - 1);
++	buf = (char *)malloc(strlen(buf_format) + strlen(strerr) - 1);
+ 	if (buf) {
+ 	    sprintf(buf, buf_format, strerr);
+ 	}
+@@ -298,7 +298,7 @@ typedef struct {
+ 
+ static gcry_error_t go_encrypted(const OtrlAuthInfo *auth, void *asdata)
+ {
+-    EncrData *edata = asdata;
++    EncrData *edata = (EncrData *)asdata;
+     gcry_error_t err = gcry_error(GPG_ERR_NO_ERROR);
+     Fingerprint *found_print = NULL;
+     int fprint_added = 0;
+@@ -470,7 +470,7 @@ static void maybe_resend(EncrData *edata
+ 		edata->ignore_message = 1;
+ 	    } else {
+ 		/* Let the user know we resent it */
+-		buf = malloc(strlen(format) +
++		buf = (char *)malloc(strlen(format) +
+ 			strlen(edata->context->username) - 1);
+ 		if (buf) {
+ 		    sprintf(buf, format, edata->context->username);
+@@ -769,7 +769,7 @@ int otrl_message_receiving(OtrlUserState
+ 		OtrlTLV *tlvs;
+ 		char *plaintext;
+ 		char *buf;
+-		char *format;
++		const char *format;
+ 		unsigned char flags;
+ 		case OTRL_MSGSTATE_PLAINTEXT:
+ 		case OTRL_MSGSTATE_FINISHED:
+@@ -787,7 +787,7 @@ int otrl_message_receiving(OtrlUserState
+ 		    format = "<b>The encrypted message received from %s is "
+ 			"unreadable, as you are not currently communicating "
+ 			"privately.</b>";
+-		    buf = malloc(strlen(format) + strlen(context->username)
++		    buf = (char*)malloc(strlen(format) + strlen(context->username)
+ 			    - 1);  /* Remove "%s", add username + '\0' */
+ 		    if (buf) {
+ 			sprintf(buf, format, context->username);
+@@ -806,7 +806,7 @@ int otrl_message_receiving(OtrlUserState
+ 		    }
+ 		    format = "?OTR Error: You sent encrypted "
+ 			    "data to %s, who wasn't expecting it.";
+-		    buf = malloc(strlen(format) + strlen(context->accountname)
++		    buf = (char *)malloc(strlen(format) + strlen(context->accountname)
+ 			    - 1);
+ 		    if (buf) {
+ 			sprintf(buf, format, context->accountname);
+@@ -829,10 +829,8 @@ int otrl_message_receiving(OtrlUserState
+ 			    edata.ignore_message = 1;
+ 			    break;
+ 			}
+-			format = is_conflict ? "We received an unreadable "
+-			    "encrypted message from %s." :
+-			    "We received a malformed data message from %s.";
+-			buf = malloc(strlen(format) + strlen(sender) - 1);
++			format = is_conflict ? "We received an unreadable encrypted message from %s." : "We received a malformed data message from %s.";
++			buf = (char *)malloc(strlen(format) + strlen(sender) - 1);
+ 			if (buf) {
+ 			    sprintf(buf, format, sender);
+ 			    if ((!(ops->display_otr_message) ||
+@@ -868,7 +866,7 @@ int otrl_message_receiving(OtrlUserState
+ 			/* If it's a heartbeat (an empty message), don't
+ 			 * display it to the user, but log a debug message. */
+ 			format = "Heartbeat received from %s.\n";
+-			buf = malloc(strlen(format) + strlen(sender) - 1);
++			buf = (char *)malloc(strlen(format) + strlen(sender) - 1);
+ 			if (buf) {
+ 			    sprintf(buf, format, sender);
+ 			    if (ops->log_message) {
+@@ -902,7 +900,7 @@ int otrl_message_receiving(OtrlUserState
+ 
+ 				/* Log a debug message */
+ 				format = "Heartbeat sent to %s.\n";
+-				buf = malloc(strlen(format) + strlen(sender)
++				buf = (char *)malloc(strlen(format) + strlen(sender)
+ 					- 1);
+ 				if (buf) {
+ 				    sprintf(buf, format, sender);
+@@ -1029,7 +1027,7 @@ int otrl_message_receiving(OtrlUserState
+ 		const char *plainmsg = (*newmessagep) ? *newmessagep : message;
+ 		const char *format = "<b>The following message received "
+ 		    "from %s was <i>not</i> encrypted: [</b>%s<b>]</b>";
+-		char *buf = malloc(strlen(format) + strlen(context->username)
++		char *buf = (char *)malloc(strlen(format) + strlen(context->username)
+ 			+ strlen(plainmsg) - 3);
+ 			/* Remove "%s%s", add username + message + '\0' */
+ 		if (buf) {
+@@ -1059,7 +1057,7 @@ int otrl_message_receiving(OtrlUserState
+ 	    if (ops->log_message) {
+ 		const char *format = "Unrecognized OTR message received "
+ 		    "from %s.\n";
+-		char *buf = malloc(strlen(format) + strlen(sender) - 1);
++		char *buf = (char *)malloc(strlen(format) + strlen(sender) - 1);
+ 		if (buf) {
+ 		    sprintf(buf, format, sender);
+ 		    ops->log_message(opdata, buf);
+Index: src/privkey.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/privkey.c,v
+retrieving revision 1.7
+diff -u -p -r1.7 privkey.c
+--- src/privkey.c	24 Jul 2006 14:26:05 -0000	1.7
++++ src/privkey.c	7 Feb 2007 22:56:28 -0000
+@@ -128,7 +128,7 @@ static gcry_error_t make_pubkey(unsigned
+     gcry_mpi_print(format, NULL, 0, &ny, y);
+     *publenp += ny + 4;
+ 
+-    *pubbufp = malloc(*publenp);
++    *pubbufp = (unsigned char*)malloc(*publenp);
+     if (*pubbufp == NULL) {
+ 	gcry_mpi_release(p);
+ 	gcry_mpi_release(q);
+@@ -198,7 +198,7 @@ gcry_error_t otrl_privkey_read_FILEp(Otr
+ 	err = gcry_error_from_errno(errno);
+ 	return err;
+     }
+-    buf = malloc(st.st_size);
++    buf = (char *)malloc(st.st_size);
+     if (!buf && st.st_size > 0) {
+ 	return gcry_error(GPG_ERR_ENOMEM);
+     }
+@@ -258,7 +258,7 @@ gcry_error_t otrl_privkey_read_FILEp(Otr
+ 	    gcry_sexp_release(allkeys);
+ 	    return gcry_error(GPG_ERR_UNUSABLE_SECKEY);
+ 	}
+-	name = malloc(tokenlen + 1);
++	name = (char *)malloc(tokenlen + 1);
+ 	if (!name) {
+ 	    gcry_sexp_release(names);
+ 	    gcry_sexp_release(protos);
+@@ -278,7 +278,7 @@ gcry_error_t otrl_privkey_read_FILEp(Otr
+ 	    gcry_sexp_release(allkeys);
+ 	    return gcry_error(GPG_ERR_UNUSABLE_SECKEY);
+ 	}
+-	proto = malloc(tokenlen + 1);
++	proto = (char *)malloc(tokenlen + 1);
+ 	if (!proto) {
+ 	    free(name);
+ 	    gcry_sexp_release(protos);
+@@ -291,7 +291,7 @@ gcry_error_t otrl_privkey_read_FILEp(Otr
+ 	gcry_sexp_release(protos);
+ 
+ 	/* Make a new OtrlPrivKey entry */
+-	p = malloc(sizeof(*p));
++	p = (OtrlPrivKey *)malloc(sizeof(*p));
+ 	if (!p) {
+ 	    free(name);
+ 	    free(proto);
+@@ -329,7 +329,7 @@ static gcry_error_t sexp_write(FILE *pri
+     char *buf;
+ 
+     buflen = gcry_sexp_sprint(sexp, GCRYSEXP_FMT_ADVANCED, NULL, 0);
+-    buf = malloc(buflen);
++    buf = (char *)malloc(buflen);
+     if (buf == NULL && buflen > 0) {
+ 	return gcry_error(GPG_ERR_ENOMEM);
+     }
+@@ -659,7 +659,7 @@ gcry_error_t otrl_privkey_sign(unsigned 
+     if (privkey->pubkey_type != OTRL_PUBKEY_TYPE_DSA)
+ 	return gcry_error(GPG_ERR_INV_VALUE);
+ 
+-    *sigp = malloc(40);
++    *sigp = (unsigned char *)malloc(40);
+     if (sigp == NULL) return gcry_error(GPG_ERR_ENOMEM);
+     *siglenp = 40;
+ 
+Index: src/proto.c
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/proto.c,v
+retrieving revision 1.7
+diff -u -p -r1.7 proto.c
+--- src/proto.c	27 Oct 2005 16:01:04 -0000	1.7
++++ src/proto.c	7 Feb 2007 22:56:29 -0000
+@@ -79,7 +79,7 @@ static gcry_error_t reveal_macs(ConnCont
+     if (numnew == 0) return gcry_error(GPG_ERR_NO_ERROR);
+ 
+     newnumsaved = context->numsavedkeys + numnew;
+-    newmacs = realloc(context->saved_mac_keys,
++    newmacs = (unsigned char*)realloc(context->saved_mac_keys,
+ 	    newnumsaved * 20);
+     if (!newmacs) {
+ 	return gcry_error(GPG_ERR_ENOMEM);
+@@ -222,7 +222,7 @@ char *otrl_proto_default_query_msg(const
+     }
+ 
+     /* Remove two "%s", add '\0' */
+-    msg = malloc(strlen(format) + strlen(version_tag) + strlen(ourname) - 3);
++    msg = (char *)malloc(strlen(format) + strlen(version_tag) + strlen(ourname) - 3);
+     if (!msg) return NULL;
+     sprintf(msg, format, version_tag, ourname);
+     return msg;
+@@ -373,7 +373,7 @@ gcry_error_t otrl_proto_create_data(char
+ 
+     /* We need to copy the incoming msg, since it might be an alias for
+      * context->lastmessage, which we'll be freeing soon. */
+-    msgdup = gcry_malloc_secure(justmsglen + 1);
++    msgdup = (char *)gcry_malloc_secure(justmsglen + 1);
+     if (msgdup == NULL) {
+ 	return gcry_error(GPG_ERR_ENOMEM);
+     }
+@@ -387,8 +387,8 @@ gcry_error_t otrl_proto_create_data(char
+ 	4 + reveallen + 20;
+     gcry_mpi_print(format, NULL, 0, &pubkeylen, context->our_dh_key.pub);
+     buflen += pubkeylen + 4;
+-    buf = malloc(buflen);
+-    msgbuf = gcry_malloc_secure(msglen);
++    buf = (unsigned char *)malloc(buflen);
++    msgbuf = (char *)gcry_malloc_secure(msglen);
+     if (buf == NULL || msgbuf == NULL) {
+ 	free(buf);
+ 	gcry_free(msgbuf);
+@@ -397,7 +397,7 @@ gcry_error_t otrl_proto_create_data(char
+     }
+     memmove(msgbuf, msgdup, justmsglen);
+     msgbuf[justmsglen] = '\0';
+-    otrl_tlv_serialize(msgbuf + justmsglen + 1, tlvs);
++    otrl_tlv_serialize((unsigned char *)(msgbuf + justmsglen + 1), tlvs);
+     bufp = buf;
+     lenp = buflen;
+     if (version == 1) {
+Index: src/proto.h
+===================================================================
+RCS file: /cvsroot/otr/libotr/src/proto.h,v
+retrieving revision 1.6
+diff -u -p -r1.6 proto.h
+--- src/proto.h	20 Nov 2005 20:31:45 -0000	1.6
++++ src/proto.h	7 Feb 2007 22:56:30 -0000
+@@ -36,12 +36,14 @@
+ 
+ typedef unsigned int OtrlPolicy;
+ 
+-#define OTRL_POLICY_ALLOW_V1			0x01
+-#define OTRL_POLICY_ALLOW_V2			0x02
++#define OTRL_POLICY_ALLOW_V1				0x01
++#define OTRL_POLICY_ALLOW_V2				0x02
+ #define OTRL_POLICY_REQUIRE_ENCRYPTION		0x04
+ #define OTRL_POLICY_SEND_WHITESPACE_TAG		0x08
+ #define OTRL_POLICY_WHITESPACE_START_AKE	0x10
+-#define OTRL_POLICY_ERROR_START_AKE		0x20
++#define OTRL_POLICY_ERROR_START_AKE			0x20
++
++#define OTRL_POLICY_NOHTML					0x40
+ 
+ #define OTRL_POLICY_VERSION_MASK (OTRL_POLICY_ALLOW_V1 | OTRL_POLICY_ALLOW_V2)
+ 

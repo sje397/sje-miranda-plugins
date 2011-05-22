@@ -1,0 +1,347 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/mim_plugs/!svn/ver/590/updater
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/317/updater/options.h
+END
+ue.ico
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/16/updater/ue.ico
+END
+conf_dialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/577/updater/conf_dialog.cpp
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/577/updater/utils.h
+END
+updater.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/577/updater/updater.dsp
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/16/updater/resource.rc
+END
+updater.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/476/updater/updater.h
+END
+extern.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/476/updater/extern.h
+END
+updater_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/459/updater/updater_8.vcproj
+END
+allocations.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/476/updater/allocations.h
+END
+m_folders.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/540/updater/m_folders.h
+END
+updater.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/16/updater/updater.dsw
+END
+icons.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/503/updater/icons.h
+END
+conf_comp_dialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/504/updater/conf_comp_dialog.cpp
+END
+progress_dialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/580/updater/progress_dialog.cpp
+END
+scan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/590/updater/scan.cpp
+END
+popups.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/566/updater/popups.cpp
+END
+updater.rc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/571/updater/updater.rc
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/16/updater/common.cpp
+END
+services.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/446/updater/services.h
+END
+socket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/559/updater/socket.cpp
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/574/updater/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/571/updater/resource.h
+END
+ezxml.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/476/updater/ezxml.c
+END
+xmldata.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/476/updater/xmldata.h
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/577/updater/utils.cpp
+END
+ezxml.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/476/updater/ezxml.h
+END
+updater.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/574/updater/updater.cpp
+END
+updater_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/36/updater/updater_8.sln
+END
+extern.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/580/updater/extern.cpp
+END
+unzipfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/551/updater/unzipfile.cpp
+END
+updater_9.sln
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/446/updater/updater_9.sln
+END
+version.rc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/16/updater/version.rc
+END
+allocations.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/16/updater/allocations.cpp
+END
+conf_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/446/updater/conf_dialog.h
+END
+icons.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/503/updater/icons.cpp
+END
+restart.ico
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/16/updater/restart.ico
+END
+updater_10.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/577/updater/updater_10.vcxproj
+END
+updater_9.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/577/updater/updater_9.vcproj
+END
+updater_10.sln
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/565/updater/updater_10.sln
+END
+updater.def
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/577/updater/updater.def
+END
+services.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/590/updater/services.cpp
+END
+m_toolbar.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/575/updater/m_toolbar.h
+END
+m_trigger.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/540/updater/m_trigger.h
+END
+updater_10.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mim_plugs/!svn/ver/565/updater/updater_10.vcxproj.filters
+END
+m_updater.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/137/updater/m_updater.h
+END
+updater.mdsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/16/updater/updater.mdsp
+END
+conf_comp_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/446/updater/conf_comp_dialog.h
+END
+progress_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/552/updater/progress_dialog.h
+END
+scan.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/476/updater/scan.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/590/updater/version.h
+END
+xmldata.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/579/updater/xmldata.cpp
+END
+popups.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/476/updater/popups.h
+END
+updater_unicode.mdsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/16/updater/updater_unicode.mdsp
+END
+u.ico
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/16/updater/u.ico
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/590/updater/common.h
+END
+socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/505/updater/socket.h
+END

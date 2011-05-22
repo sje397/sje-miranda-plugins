@@ -1,0 +1,26 @@
+readme.txt
+common.h
+common.cpp
+version.h
+version.rc
+base.rc
+resource.rc
+resource.h
+base.cpp
+[!if OPTIONS_PAGE]
+options.cpp
+options.h
+[!endif]
+[!if FILTER_CODE]
+filter.cpp
+filter.h
+[!endif]
+[!if USE_NETLIB]
+net.cpp
+net.h
+[!endif]
+[!if MAIN_MENU || CONTACT_MENU]
+menu.cpp
+menu.h
+menu.ico
+[!endif]

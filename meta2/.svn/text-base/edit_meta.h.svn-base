@@ -1,0 +1,2 @@
+
+void EditMeta(HANDLE hMeta);

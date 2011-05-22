@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/mim_plugs/!svn/ver/284/iax
+END
+dial_dlg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/283/iax/dial_dlg.cpp
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/35/iax/options.h
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/35/iax/utils.cpp
+END
+icon1.ico
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/35/iax/icon1.ico
+END
+iax_interface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/283/iax/iax_interface.cpp
+END
+iax.rc
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/mim_plugs/!svn/ver/35/iax/iax.rc
+END
+menu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/mim_plugs/!svn/ver/35/iax/menu.cpp
+END
+dial_dlg.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/35/iax/dial_dlg.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/mim_plugs/!svn/ver/35/iax/utils.h
+END
+iax_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/35/iax/iax_interface.h
+END
+README_building.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/35/iax/README_building.txt
+END
+menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/mim_plugs/!svn/ver/35/iax/menu.h
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/35/iax/resource.rc
+END
+icons.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/160/iax/icons.cpp
+END
+iaxclient_patch.patch
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/35/iax/iaxclient_patch.patch
+END
+private.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/284/iax/private.h
+END
+icons.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/mim_plugs/!svn/ver/35/iax/icons.h
+END
+dllmain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/283/iax/dllmain.cpp
+END
+iax_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/283/iax/iax_8.sln
+END
+services.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/195/iax/services.cpp
+END
+services.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/35/iax/services.h
+END
+iax_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/284/iax/iax_8.vcproj
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/35/iax/options.cpp
+END
+private.rc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/35/iax/private.rc
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/35/iax/resource.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/160/iax/common.h
+END

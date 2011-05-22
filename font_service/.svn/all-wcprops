@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/375/font_service
+END
+module_fonts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/5/font_service/module_fonts.cpp
+END
+forkthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/5/font_service/forkthread.h
+END
+FontService_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mim_plugs/!svn/ver/55/font_service/FontService_8.vcproj
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/5/font_service/options.h
+END
+collection.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/375/font_service/collection.h
+END
+FontService.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/5/font_service/FontService.dsw
+END
+module_fonts.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/5/font_service/module_fonts.h
+END
+FontService.mdsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/125/font_service/FontService.mdsp
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/37/font_service/resource.rc
+END
+services.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/125/font_service/services.cpp
+END
+FontService.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/125/font_service/FontService.cpp
+END
+FontService_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/36/font_service/FontService_8.sln
+END
+services.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/55/font_service/services.h
+END
+forkthread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/5/font_service/forkthread.cpp
+END
+FontService.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/5/font_service/FontService.dsp
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/55/font_service/options.cpp
+END
+FontService.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/5/font_service/FontService.h
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/5/font_service/resource.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/37/font_service/common.h
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/19/internet_time
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/19/internet_time/StdAfx.h
+END
+time_convert.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/19/internet_time/time_convert.cpp
+END
+timezone.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/19/internet_time/timezone.h
+END
+InternetTime.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/19/internet_time/InternetTime.dsw
+END
+time_convert.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/19/internet_time/time_convert.h
+END
+plugwin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/19/internet_time/plugwin.cpp
+END
+InternetTime.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/19/internet_time/InternetTime.cpp
+END
+InternetTime.plg
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/19/internet_time/InternetTime.plg
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/19/internet_time/StdAfx.cpp
+END
+plugwin.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/19/internet_time/plugwin.h
+END
+timezone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/19/internet_time/timezone.cpp
+END
+InternetTime.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/19/internet_time/InternetTime.dsp
+END
+InternetTime.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/19/internet_time/InternetTime.h
+END

@@ -1,0 +1,228 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_PROTO          ICON                    "icon1.ico"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 313, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    RTEXT           "Delay between pings (secs):",IDC_STATIC,12,20,121,8
+    EDITTEXT        IDC_PPM,138,16,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER,WS_EX_RIGHT
+    CONTROL         "Timeout",IDC_CHECKPOPUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,21,74,10
+    RTEXT           "Ping timeout (secs):",IDC_STATIC,12,36,121,8
+    EDITTEXT        IDC_PT,138,34,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER,WS_EX_RIGHT
+    GROUPBOX        "Logging",IDC_STATIC,7,121,299,55
+    CONTROL         "Log to File",IDC_CHK_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,134,61,10
+    LTEXT           "Log Filename:",IDC_STATIC,17,154,56,8
+    EDITTEXT        IDC_ED_FILENAME,77,151,158,14,ES_AUTOHSCROLL
+    GROUPBOX        "Network",IDC_STATIC,7,8,211,62
+    GROUPBOX        "PopUps",IDC_STATIC,222,8,84,62
+    CONTROL         "Reply",IDC_CHECKPOPUP2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,35,73,10
+    CONTROL         "Block Repetitions",IDC_CHK_BLOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,53,73,10
+    PUSHBUTTON      "View Log",IDC_BTN_VIEWLOG,169,132,59,14
+    PUSHBUTTON      "Browse...",IDC_BTN_LOGBROWSE,241,150,54,16
+    GROUPBOX        "Status",IDC_STATIC,7,72,299,46
+    CONTROL         "Hide in status bar and status menu (requires restart - uncheck to set icons)",IDC_CHK_HIDEPROTO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,101,272,10
+    RTEXT           "Repeats for success/failure:",IDC_STATIC,12,53,121,8
+    EDITTEXT        IDC_RPT,138,52,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER,WS_EX_RIGHT
+    CONTROL         "Put details in status message",IDC_CHK_USESTATUSMSG,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,87,120,10
+END
+
+IDD_DIALOG2 DIALOG  0, 0, 303, 212
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Ping Destinations",IDC_STATIC,7,7,289,198
+    PUSHBUTTON      "Add",IDC_BTN_DESTADD,38,172,38,15
+    LISTBOX         IDC_LST_DEST,37,32,228,128,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Remove",IDC_BTN_DESTREM,132,172,38,15,WS_DISABLED
+    PUSHBUTTON      "Edit",IDC_BTN_DESTEDIT,85,172,38,15,WS_DISABLED
+    PUSHBUTTON      "Up",IDC_BTN_DESTUP,179,172,38,15,WS_DISABLED
+    PUSHBUTTON      "Down",IDC_BTN_DESTDOWN,226,172,38,15,WS_DISABLED
+END
+
+IDD_DIALOG3 DIALOGEX 0, 0, 264, 326
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ping Destination"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,78,305,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,305,50,14
+    RTEXT           "Address:",IDC_STATIC,12,34,51,8
+    RTEXT           "Label:",IDC_STATIC,16,49,47,8
+    EDITTEXT        IDC_ED_DESTADDR,67,30,154,12,ES_AUTOHSCROLL | ES_WANTRETURN
+    EDITTEXT        IDC_ED_DESTLAB,67,48,154,12,ES_AUTOHSCROLL | ES_WANTRETURN
+    CONTROL         "TCP Connect",IDC_CHK_DESTTCP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,68,69,71,10
+    LTEXT           "Port:",IDC_STATIC,147,69,30,8,0,WS_EX_RIGHT
+    EDITTEXT        IDC_ED_DESTPORT,181,67,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_WANTRETURN | ES_NUMBER | WS_DISABLED
+    CTEXT           "Add to contact list group:",IDC_STATIC,63,90,138,8
+    COMBOBOX        IDC_COMBO_GROUP,70,104,122,148,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Control Protocol:",IDC_STATIC,84,141,92,8
+    COMBOBOX        IDC_COMBO_DESTPROTO,83,154,97,106,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DESTSTAT,156,193,76,83,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Set my status to:",IDC_STATIC,156,179,87,8
+    LTEXT           "On success, if my status is:",IDC_STATIC,33,179,111,8
+    COMBOBOX        IDC_COMBO_DESTSTAT2,33,193,90,76,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ED_COMMAND,25,232,213,16,ES_AUTOHSCROLL
+    CTEXT           "Execute the following command on double-click:",IDC_STATIC,28,217,207,8
+    GROUPBOX        "Contact",IDC_STATIC,7,7,250,119
+    GROUPBOX        "Protocols",IDC_STATIC,7,132,250,166
+    EDITTEXT        IDC_ED_PARAMS,25,271,213,16,ES_AUTOHSCROLL
+    CTEXT           "(Optional) Command Parameters:",IDC_STATIC,27,256,207,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_DIALOG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 319
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Disable all pings",           ID_MENU_DISABLEALLPINGS
+        MENUITEM "Enable all pings",            ID_MENU_ENABLEALLPINGS
+        MENUITEM SEPARATOR
+        MENUITEM "Options...",                  ID_MENU_OPTIONS
+        MENUITEM "Destinations...",             ID_MENU_DESTINATIONS
+    END
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

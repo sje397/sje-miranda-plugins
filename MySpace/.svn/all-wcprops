@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/mim_plugs/!svn/ver/464/MySpace
+END
+arc4.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/219/MySpace/arc4.h
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/277/MySpace/options.h
+END
+menu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/277/MySpace/menu.cpp
+END
+proto.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/221/MySpace/proto.h
+END
+nick_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/222/MySpace/nick_dialog.h
+END
+notifications.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/344/MySpace/notifications.cpp
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/217/MySpace/resource.rc
+END
+formatting.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/334/MySpace/formatting.cpp
+END
+server_con.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/409/MySpace/server_con.h
+END
+MySpace.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/228/MySpace/MySpace.dsw
+END
+links.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/277/MySpace/links.cpp
+END
+net.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/248/MySpace/net.cpp
+END
+srmm_icon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/336/MySpace/srmm_icon.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/217/MySpace/common.cpp
+END
+arc4.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/219/MySpace/arc4.cpp
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/357/MySpace/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/354/MySpace/resource.h
+END
+NetMessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/255/MySpace/NetMessage.h
+END
+collection.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/375/MySpace/collection.h
+END
+MySpace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/464/MySpace/MySpace.cpp
+END
+MySpace_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/227/MySpace/MySpace_8.sln
+END
+proto.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/409/MySpace/proto.cpp
+END
+nick_dialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/255/MySpace/nick_dialog.cpp
+END
+ MySpace.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/228/MySpace/%20MySpace.dsp
+END
+server_con.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/416/MySpace/server_con.cpp
+END
+version.rc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/217/MySpace/version.rc
+END
+menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/277/MySpace/menu.h
+END
+MySpace_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/334/MySpace/MySpace_8.vcproj
+END
+notifications.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/298/MySpace/notifications.h
+END
+formatting.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/278/MySpace/formatting.h
+END
+zap.ico
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/334/MySpace/zap.ico
+END
+MySpace.rc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/384/MySpace/MySpace.rc
+END
+links.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/277/MySpace/links.h
+END
+MySpace.ico
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/233/MySpace/MySpace.ico
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/217/MySpace/readme.txt
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/416/MySpace/version.h
+END
+net.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/217/MySpace/net.h
+END
+NetMessage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/290/MySpace/NetMessage.cpp
+END
+srmm_icon.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/274/MySpace/srmm_icon.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/368/MySpace/common.h
+END

@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/384/ping_protocol
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/12/ping_protocol/StdAfx.h
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/185/ping_protocol/options.h
+END
+icon1.ico
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/12/ping_protocol/icon1.ico
+END
+pingproto.mdsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/186/ping_protocol/pingproto.mdsp
+END
+menu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/185/ping_protocol/menu.cpp
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/12/ping_protocol/utils.h
+END
+rawping.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/185/ping_protocol/rawping.cpp
+END
+pingproto.plg
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/12/ping_protocol/pingproto.plg
+END
+pingproto.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/186/ping_protocol/pingproto.cpp
+END
+log.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/12/ping_protocol/log.cpp
+END
+pingproto_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/36/ping_protocol/pingproto_8.sln
+END
+pinggraph.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/12/ping_protocol/pinggraph.h
+END
+icmp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/185/ping_protocol/icmp.cpp
+END
+pingproto_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/33/ping_protocol/pingproto_8.vcproj
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/12/ping_protocol/StdAfx.cpp
+END
+pingthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/185/ping_protocol/pingthread.h
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/185/ping_protocol/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/12/ping_protocol/resource.h
+END
+pinglist.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/12/ping_protocol/pinglist.h
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/185/ping_protocol/utils.cpp
+END
+pingproto.rc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/384/ping_protocol/pingproto.rc
+END
+menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/185/ping_protocol/menu.h
+END
+rawping.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/185/ping_protocol/rawping.h
+END
+pinggraph.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/185/ping_protocol/pinggraph.cpp
+END
+pingthread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/mim_plugs/!svn/ver/185/ping_protocol/pingthread.cpp
+END
+pingproto.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/12/ping_protocol/pingproto.dsp
+END
+pingproto.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mim_plugs/!svn/ver/128/ping_protocol/pingproto.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/185/ping_protocol/log.h
+END
+pinglist.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/185/ping_protocol/pinglist.cpp
+END
+pingproto.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mim_plugs/!svn/ver/12/ping_protocol/pingproto.dsw
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/128/ping_protocol/common.h
+END
+icmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/185/ping_protocol/icmp.h
+END

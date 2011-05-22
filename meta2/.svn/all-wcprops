@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/mim_plugs/!svn/ver/475/meta2
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/338/meta2/options.h
+END
+settings.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/418/meta2/settings.cpp
+END
+menu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/450/meta2/menu.cpp
+END
+proto.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/349/meta2/proto.h
+END
+meta2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/464/meta2/meta2.cpp
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/338/meta2/resource.rc
+END
+api.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/mim_plugs/!svn/ver/445/meta2/api.h
+END
+meta_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/338/meta2/meta_api.c
+END
+import.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/338/meta2/import.h
+END
+icons.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/338/meta2/icons.h
+END
+meta2.sln
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/445/meta2/meta2.sln
+END
+core_functions.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/369/meta2/core_functions.h
+END
+select_meta.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/450/meta2/select_meta.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/353/meta2/common.cpp
+END
+meta2.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/475/meta2/meta2.vcproj
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/445/meta2/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/348/meta2/resource.h
+END
+menu.ico
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/338/meta2/menu.ico
+END
+priorities.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/342/meta2/priorities.h
+END
+collection.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/450/meta2/collection.h
+END
+edit_meta.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/338/meta2/edit_meta.h
+END
+proto.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/450/meta2/proto.cpp
+END
+settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/418/meta2/settings.h
+END
+m_metacontacts.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/423/meta2/m_metacontacts.h
+END
+version.rc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/338/meta2/version.rc
+END
+menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/mim_plugs/!svn/ver/338/meta2/menu.h
+END
+api.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mim_plugs/!svn/ver/450/meta2/api.cpp
+END
+import.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/450/meta2/import.cpp
+END
+icons.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/338/meta2/icons.cpp
+END
+core_functions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/450/meta2/core_functions.cpp
+END
+priorities.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/445/meta2/priorities.cpp
+END
+meta2.rc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/384/meta2/meta2.rc
+END
+select_meta.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/338/meta2/select_meta.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/418/meta2/version.h
+END
+edit_meta.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/450/meta2/edit_meta.cpp
+END
+miranda-svn.patch
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/423/meta2/miranda-svn.patch
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/445/meta2/common.h
+END

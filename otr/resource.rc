@@ -1,0 +1,117 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_START               ICON                    "start.ico"
+IDI_STOP                ICON                    "stop.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT1 DIALOGEX 0, 0, 288, 217
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_CLIST,"SysListView32",LVS_REPORT | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,0,0,287,99
+    GROUPBOX        "Default Policy",IDC_STATIC,8,144,109,59
+    CONTROL         "Manual",IDC_RAD_MANUAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,16,154,95,10
+    CONTROL         "Opportunistic",IDC_RAD_OPP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,166,95,10
+    CONTROL         "Always",IDC_RAD_ALWAYS,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,178,95,10
+    CONTROL         "Never",IDC_RAD_NEVER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,189,95,10
+    LISTBOX         IDC_LIST_PROTOS,127,119,152,59,WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ED_FINGERPRINT,127,180,152,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "New Private Key",IDC_BUT_NEWKEY,127,194,152,10,WS_DISABLED
+    CONTROL         "End Sessions on window close",IDC_CHK_ENDCLOSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,106,117,10
+    CONTROL         "End sessions when contacts go offline",IDC_CHK_ENDOFFLINE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,106,136,10
+    CONTROL         "Prefix:",IDC_CHK_PREFIX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,119,50,10
+    CONTROL         "Show OTR messages inline",IDC_CHK_MSGINLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,131,110,10
+    EDITTEXT        IDC_ED_PREFIX,61,118,57,12,ES_AUTOHSCROLL
+    CONTROL         "Timeout FINISHED sessions back to PLAINTEXT (TAKE CARE!)",IDC_CHK_TIMEFINISH,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,206,213,10
+END
+
+IDD_GENKEYNOTIFY DIALOG  0, 0, 200, 80
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_GROUP
+CAPTION "OTR Generating Private Key"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CTEXT           "Generating new private key - please wait.",IDC_STATIC,10,35,180,10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,78 @@
+Index: include/m_plugins.h
+===================================================================
+--- include/m_plugins.h	(revision 8019)
++++ include/m_plugins.h	(working copy)
+@@ -79,6 +79,12 @@
+ //feature-dependent
+ #define MS_PLUGINS_GETDISABLEDEFAULTARRAY	   "Plugins/GetDisableDefaultArray" 
+ 
++// plugins/hookservice
++// replaces a service function pointer and returns the old value
++// wPararm = (char *)service name
++// lParam = MIRANDASERVICE
++#define MS_PLUGINS_HOOKSERVICE					"Plugins/HookService"
++
+ #endif // M_PLUGINS_H__
+ 
+ 
+Index: src/core/modules.c
+===================================================================
+--- src/core/modules.c	(revision 8019)
++++ src/core/modules.c	(working copy)
+@@ -722,6 +722,23 @@
+ 	return ret;
+ }
+ 
++MIRANDASERVICE ModulesReplaceService(char *name, MIRANDASERVICE pfnNewService) {
++	TService *pService;
++	MIRANDASERVICE pfnService;
++	if (pfnNewService==NULL || name==NULL) return 0;
++
++	EnterCriticalSection(&csServices);
++	pService=FindServiceByName(name);
++	if (pService==NULL) {
++		LeaveCriticalSection(&csServices);
++		return 0;
++	}
++	pfnService = pService->pfnService;
++	pService->pfnService = pfnNewService;
++	LeaveCriticalSection(&csServices);
++	return pfnService;
++}
++
+ int CallService(const char *name,WPARAM wParam,LPARAM lParam)
+ {
+ 	TService *pService;
+Index: src/modules/plugins/newplugins.c
+===================================================================
+--- src/modules/plugins/newplugins.c	(revision 8019)
++++ src/modules/plugins/newplugins.c	(working copy)
+@@ -100,6 +100,7 @@
+ #define PLUGINDISABLELIST "PluginDisable"
+ 
+ int CallHookSubscribers( HANDLE hEvent, WPARAM wParam, LPARAM lParam );
++MIRANDASERVICE ModulesReplaceService(char *name, MIRANDASERVICE pfnNewService);
+ 
+ int LoadDatabaseModule(void);
+ void ListView_SetItemTextA( HWND hwndLV, int i, int iSubItem, char* pszText );
+@@ -437,6 +438,11 @@
+ 	return (int) &pluginDefModList;
+ }
+ 
++static int PluginsHookService(WPARAM wParam, LPARAM lParam) 
++{
++	return (int)ModulesReplaceService((char *)wParam, (MIRANDASERVICE)lParam);
++}
++
+ // called in the first pass to create pluginEntry* structures and validate database plugins
+ static BOOL scanPluginsDir (WIN32_FIND_DATAA * fd, char * path, WPARAM wParam, LPARAM lParam )
+ {
+@@ -1040,6 +1046,8 @@
+ 	//
+ 	CreateServiceFunction(MS_PLUGINS_ENUMDBPLUGINS, PluginsEnum);
+ 	CreateServiceFunction(MS_PLUGINS_GETDISABLEDEFAULTARRAY, PluginsGetDefaultArray);
++	CreateServiceFunction(MS_PLUGINS_HOOKSERVICE, PluginsHookService);
++
+ 	// make sure plugins can get internal core APIs
+ 	pluginCoreLink.CallService                    = CallService;
+ 	pluginCoreLink.ServiceExists                  = ServiceExists;

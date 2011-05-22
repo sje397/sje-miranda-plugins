@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/mim_plugs/!svn/ver/434/sametime
+END
+part.ico
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/412/sametime/part.ico
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/412/sametime/StdAfx.h
+END
+announce.ico
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/412/sametime/announce.ico
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/420/sametime/options.h
+END
+files.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/412/sametime/files.cpp
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/412/sametime/utils.h
+END
+conference.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/412/sametime/conference.cpp
+END
+sametime.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/sametime.h
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/420/sametime/resource.rc
+END
+userlist.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/412/sametime/userlist.cpp
+END
+places.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/412/sametime/places.h
+END
+messaging.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/412/sametime/messaging.cpp
+END
+clist_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/412/sametime/clist_util.h
+END
+session.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/434/sametime/session.cpp
+END
+session_announce_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mim_plugs/!svn/ver/412/sametime/session_announce_win.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/common.cpp
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/StdAfx.cpp
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/420/sametime/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/420/sametime/resource.h
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/412/sametime/utils.cpp
+END
+sametime.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/434/sametime/sametime.cpp
+END
+places.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/places.cpp
+END
+files.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/412/sametime/files.h
+END
+clist_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/412/sametime/clist_util.cpp
+END
+conference.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/412/sametime/conference.h
+END
+online.ico
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/online.ico
+END
+sametime.sln
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/420/sametime/sametime.sln
+END
+userlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/userlist.h
+END
+messaging.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/412/sametime/messaging.h
+END
+sametime.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/420/sametime/sametime.vcproj
+END
+invite.ico
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/412/sametime/invite.ico
+END
+session.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/412/sametime/session.h
+END
+session_announce_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/412/sametime/session_announce_win.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/430/sametime/common.h
+END

@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/mim_plugs/!svn/ver/595/tipper
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/366/tipper/options.h
+END
+subst.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/104/tipper/subst.h
+END
+tipper.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/542/tipper/tipper.dsp
+END
+tipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/15/tipper/tipper.h
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/15/tipper/resource.rc
+END
+tipper_10.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/546/tipper/tipper_10.vcxproj
+END
+tipper_9.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/544/tipper/tipper_9.vcproj
+END
+tipper_10.sln
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/546/tipper/tipper_10.sln
+END
+tipper.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/95/tipper/tipper.dsw
+END
+popwin.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/15/tipper/popwin.h
+END
+translations.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/542/tipper/translations.cpp
+END
+tipper_10.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mim_plugs/!svn/ver/538/tipper/tipper_10.vcxproj.filters
+END
+tipper.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/457/tipper/tipper.vcproj
+END
+tipper.mdsp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/393/tipper/tipper.mdsp
+END
+message_pump.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/544/tipper/message_pump.cpp
+END
+m_notify.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/538/tipper/m_notify.h
+END
+m_variables.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/538/tipper/m_variables.h
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/542/tipper/options.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/366/tipper/resource.h
+END
+str_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/542/tipper/str_utils.h
+END
+subst.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/542/tipper/subst.cpp
+END
+tipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/595/tipper/tipper.cpp
+END
+tipper_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/177/tipper/tipper_8.sln
+END
+tipper_9.sln
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/531/tipper/tipper_9.sln
+END
+m_metacontacts.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/538/tipper/m_metacontacts.h
+END
+version.rc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/62/tipper/version.rc
+END
+tipper_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/457/tipper/tipper_8.vcproj
+END
+popwin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/544/tipper/popwin.cpp
+END
+m_tipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/523/tipper/m_tipper.h
+END
+m_trigger.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/538/tipper/m_trigger.h
+END
+m_updater.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/538/tipper/m_updater.h
+END
+tipper.rc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/384/tipper/tipper.rc
+END
+translations.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/64/tipper/translations.h
+END
+str_utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/542/tipper/str_utils.cpp
+END
+tipper.mak
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/95/tipper/tipper.mak
+END
+tipper.dep
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/95/tipper/tipper.dep
+END
+message_pump.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/544/tipper/message_pump.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/591/tipper/version.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/542/tipper/common.h
+END

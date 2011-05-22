@@ -1,0 +1,324 @@
+#include "stdafx.h"
+#include "utils.h"
+
+bool use_raw_ping = true;
+/*
+std::string trim_string(const std::string &in) {
+	std::string out;
+
+	int i = 0;
+	while(i < in.size() && in[i] == ' ')
+		i++;
+	for(; i < in.size(); i++) {
+		out += in[i];
+	}
+
+	while(out.size() && out[out.size() - 1] == ' ') {
+		out = out.substr(0, out.size() - 1);
+	}
+
+
+	return out;
+}
+
+void capitalize(std::string &in) {
+	for(int i = 0; i < in.length(); i++) {
+		if(in[i] >= 'a' && in[i] <= 'z')
+			in[i] = 'A' + (in[i] - 'a');
+	}
+}
+*/
+LRESULT CALLBACK NullWindowProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam )
+{
+	switch( message ) {
+		case WM_COMMAND: {
+			PUDeletePopUp( hWnd );
+			break;
+		}
+
+		case WM_CONTEXTMENU:
+			PUDeletePopUp( hWnd );
+			break;
+	}
+
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+void CALLBACK sttMainThreadCallback( ULONG dwParam )
+{
+	POPUPDATAEX* ppd = ( POPUPDATAEX* )dwParam;
+
+	if ( ServiceExists(MS_POPUP_ADDPOPUPEX) )
+		CallService( MS_POPUP_ADDPOPUPEX, ( WPARAM )ppd, 0 );
+	else 
+		if ( ServiceExists(MS_POPUP_ADDPOPUP) )
+			CallService( MS_POPUP_ADDPOPUP, ( WPARAM )ppd, 0 );
+
+	free( ppd );
+}
+
+void __stdcall	ShowPopup( const char* line1, const char* line2, int flags )
+{
+	if(CallService(MS_SYSTEM_TERMINATED, 0, 0)) return;
+
+	if ( !ServiceExists( MS_POPUP_ADDPOPUP )) {	
+		MessageBox( NULL, line2, PROTO " Message", MB_OK | MB_ICONINFORMATION );
+		return;
+	}
+
+	POPUPDATAEX* ppd = ( POPUPDATAEX* )calloc( sizeof( POPUPDATAEX ), 1 );
+
+	ppd->lchContact = NULL;
+	ppd->lchIcon = (flags ? LoadSkinnedProtoIcon(PROTO, options.rstatus) : LoadSkinnedProtoIcon(PROTO, options.nrstatus));
+	strcpy( ppd->lpzContactName, line1 );
+	strcpy( ppd->lpzText, line2 );
+
+	ppd->colorBack = GetSysColor( COLOR_BTNFACE );
+	ppd->colorText = GetSysColor( COLOR_WINDOWTEXT );
+	ppd->iSeconds = 10;
+
+	ppd->PluginWindowProc = ( WNDPROC )NullWindowProc;
+	ppd->PluginData = NULL;
+
+	QueueUserAPC( sttMainThreadCallback , mainThread, ( ULONG )ppd );
+}
+
+// service functions
+
+// wParam is zero
+// lParam is address of PINGADDRESS structure where ping result is placed (i.e. modifies 'responding' 
+// and 'round_trip_time')
+int PluginPing(WPARAM wParam,LPARAM lParam)
+{
+	PINGADDRESS *pa = (PINGADDRESS *)lParam;
+
+	if(pa->port == -1) {
+		if(use_raw_ping) {
+			pa->round_trip_time = raw_ping(pa->pszName, options.ping_timeout * 1000);
+			pa->responding = (pa->round_trip_time != -1);
+		} else {
+			// ICMP echo
+			IP_ECHO_REPLY result;
+			pa->responding = ICMP::get_instance()->ping(pa->pszName, result);
+			if(pa->responding)
+				pa->round_trip_time = (short)result.RoundTripTime;
+			else
+				pa->round_trip_time = -1;
+		}
+	} else if(hNetlibUser) {
+		// TCP connect
+
+		clock_t start_tcp = clock();
+		
+		//GetLocalTime(&systime);
+		NETLIBOPENCONNECTION conn = {0};
+		conn.cbSize = sizeof(NETLIBOPENCONNECTION);
+		conn.szHost = pa->pszName;
+		conn.wPort = pa->port;
+		conn.flags = NLOCF_V2;
+		conn.timeout = options.ping_timeout; 
+
+		HANDLE s = (HANDLE)CallService(MS_NETLIB_OPENCONNECTION, (WPARAM)hNetlibUser, (LPARAM)&conn);
+
+		clock_t end_tcp = clock();
+		
+		if(s) {
+			LINGER l;
+			char buf[1024];
+			SOCKET socket = (SOCKET)CallService(MS_NETLIB_GETSOCKET, (WPARAM)s, (LPARAM)NLOCF_HTTP);
+			if(socket != INVALID_SOCKET) {
+				l.l_onoff = 1;
+				l.l_linger = 0;
+				setsockopt(socket, SOL_SOCKET, SO_LINGER, (char *)&l, sizeof(l));
+
+				Netlib_Send(s, "OUT\r\n\r\n", 7, 0); //MSG_RAW);
+
+				//Sleep(ICMP::get_instance()->get_timeout());
+				Sleep(options.ping_timeout * 1000);
+				unsigned long bytes_remaining;
+				ioctlsocket(socket, FIONBIO, &bytes_remaining);
+
+				if(bytes_remaining > 0) {
+					int retval, rx = 0;
+					while((retval = Netlib_Recv(s, buf, 1024, 0)) != SOCKET_ERROR && (retval > 0) && rx < 2048) {
+						rx += retval; // recv at most 2kb before closing connection
+					}
+				}
+				//closesocket(socket);
+
+			}
+
+			Netlib_CloseHandle(s);
+
+			pa->responding = true;
+			pa->round_trip_time = (int)(((end_tcp - start_tcp) / (double)CLOCKS_PER_SEC) * 1000);
+		} else {
+			pa->responding = false;
+			pa->round_trip_time = -1;
+		}
+
+	}
+	return 0;
+}
+
+void Lock(CRITICAL_SECTION *cs, char *lab) {
+//	if(logging) {
+//		std::ostringstream oss1;
+//		oss1 << "Locking cs: " << cs << ", " << lab;
+//		CallService(PROTO "/Log", (WPARAM)oss1.str().c_str(), 0);
+//	}
+	EnterCriticalSection(cs);
+//	if(logging) {
+//		std::ostringstream oss2;
+//		oss2 << "Locked cs: " << cs;
+//		CallService(PROTO "/Log", (WPARAM)oss2.str().c_str(), 0);
+//	}
+}
+
+void Unlock(CRITICAL_SECTION *cs) {
+//	if(logging) {
+//		std::ostringstream oss1;
+//		oss1 << "Unlocking cs: " << cs;
+//		CallService(PROTO "/Log", (WPARAM)oss1.str().c_str(), 0);
+//	}
+	LeaveCriticalSection(cs);
+}
+
+int PingDisableAll(WPARAM wParam, LPARAM lParam) {
+	PINGLIST pl;
+	CallService(PROTO "/GetPingList", 0, (LPARAM)&pl);
+	for(PINGLIST::iterator i = pl.begin(); i != pl.end(); i++) {
+		i->status = options.off_status;
+		DBWriteContactSettingWord(i->hContact, PROTO, "Status", i->status);
+		set_changing_clist_handle(TRUE);
+		DBWriteContactSettingString(i->hContact, "CList", "MyHandle", i->pszLabel);
+		set_changing_clist_handle(FALSE);
+	}
+	CallService(PROTO "/SetPingList", (WPARAM)&pl, 0);
+	return 0;
+}
+
+int PingEnableAll(WPARAM wParam, LPARAM lParam) {
+	PINGLIST pl;
+	CallService(PROTO "/GetPingList", 0, (LPARAM)&pl);
+	for(PINGLIST::iterator i = pl.begin(); i != pl.end(); i++) {
+		if(i->status == options.off_status) {
+			i->status = options.nrstatus;
+			DBWriteContactSettingWord(i->hContact, PROTO, "Status", i->status);
+		}
+	}
+	CallService(PROTO "/SetPingList", (WPARAM)&pl, 0);
+	return 0;
+}
+
+
+int ToggleEnabled(WPARAM wParam, LPARAM lParam) {
+	PINGLIST pl;
+	CallService(PROTO "/GetPingList", 0, (LPARAM)&pl);
+	for(PINGLIST::iterator i = pl.begin(); i != pl.end(); i++) {
+		if(i->hContact == (HANDLE)wParam) {
+
+			if(i->status == options.off_status)
+				i->status = options.nrstatus;
+			else {
+				i->status = options.off_status;
+				set_changing_clist_handle(TRUE);
+				DBWriteContactSettingString(i->hContact, "CList", "MyHandle", i->pszLabel);
+				set_changing_clist_handle(FALSE);
+			}
+			DBWriteContactSettingWord(i->hContact, PROTO, "Status", i->status);
+		}
+	}
+	CallService(PROTO "/SetPingList", (WPARAM)&pl, 0);
+	return 0;
+}
+
+int EditContact(WPARAM wParam, LPARAM lParam) {
+	PINGLIST pl;
+	HWND hwndList = (HWND)CallService(MS_CLUI_GETHWND, 0, 0);
+
+	CallService(PROTO "/GetPingList", 0, (LPARAM)&pl);
+	for(PINGLIST::iterator i = pl.begin(); i != pl.end(); i++) {
+		if(i->hContact == (HANDLE)wParam) {
+
+			add_edit_addr = *i;
+	
+			if(DialogBox(hInst, MAKEINTRESOURCE(IDD_DIALOG3), hwndList, DlgProcDestEdit) == IDOK) {
+	
+				*i = add_edit_addr;
+				CallService(PROTO "/SetAndSavePingList", (WPARAM)&pl, 0);
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+int ContactDblClick(WPARAM wParam, LPARAM lParam) {
+	PINGLIST pl;
+	CallService(PROTO "/GetPingList", 0, (LPARAM)&pl);
+	for(PINGLIST::iterator i = pl.begin(); i != pl.end(); i++) {
+		if(i->hContact == (HANDLE)wParam) {
+			if(strlen(i->pszCommand)) {
+				ShellExecute(0, "open", i->pszCommand, i->pszParams, 0, SW_SHOW);
+			} else {
+				CallService(PROTO "/ToggleEnabled", wParam, 0);
+			}
+		}
+	}
+	return 0;
+}
+
+
+void import_ping_address(int index, PINGADDRESS &pa) {
+	std::ostringstream os1, os2, os3, os4, os5, os6, os7;
+	os1 << "Address" << index;
+	os2 << "Label" << index;
+	os3 << "Enabled" << index;
+	os4 << "Port" << index;
+	os5 << "Proto" << index;
+	os6 << "Status" << index;
+	os7 << "Status2" << index;
+
+	DBVARIANT dbv;
+	DBGetContactSetting(0, "PingPlug", os1.str().c_str(), &dbv);
+	strncpy(pa.pszName, dbv.pszVal, MAX_PINGADDRESS_STRING_LENGTH);
+	DBFreeVariant(&dbv);
+	DBGetContactSetting(0, "PingPlug", os2.str().c_str(), &dbv);
+	strncpy(pa.pszLabel, dbv.pszVal, MAX_PINGADDRESS_STRING_LENGTH);
+	DBFreeVariant(&dbv);
+
+	pa.port = (int)DBGetContactSettingDword(0, "PingPlug", os4.str().c_str(), (DWORD)-1);
+
+	DBGetContactSetting(0, "PingPlug", os5.str().c_str(), &dbv);
+	strncpy(pa.pszProto, dbv.pszVal, MAX_PINGADDRESS_STRING_LENGTH);
+	DBFreeVariant(&dbv);
+
+	pa.set_status = DBGetContactSettingWord(0, "PingPlug", os6.str().c_str(), ID_STATUS_ONLINE);
+	pa.get_status = DBGetContactSettingWord(0, "PingPlug", os7.str().c_str(), ID_STATUS_OFFLINE);
+
+	pa.responding = false;
+	pa.round_trip_time = 0;
+	pa.miss_count = 0;
+	pa.index = index;
+	pa.pszCommand[0] = '\0';
+
+	pa.hContact = 0;
+	pa.status = options.nrstatus;
+}
+
+// read in addresses from old pingplug
+void import_ping_addresses() {
+	int count = DBGetContactSettingDword(0, "PingPlug", "NumEntries", 0);
+	PINGADDRESS pa;
+
+	EnterCriticalSection(&list_cs);
+	list_items.clear();
+	for(int index = 0; index < count; index++) {
+		import_ping_address(index, pa);
+		list_items.push_back(pa);
+	}
+	std::sort(list_items.begin(), list_items.end(), SAscendingSort());
+	write_ping_addresses();
+	LeaveCriticalSection(&list_cs);
+}

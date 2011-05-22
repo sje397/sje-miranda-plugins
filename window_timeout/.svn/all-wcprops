@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mim_plugs/!svn/ver/384/window_timeout
+END
+windowtimeout.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/22/window_timeout/windowtimeout.c
+END
+windowtimeout.plg
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/22/window_timeout/windowtimeout.plg
+END
+list.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/22/window_timeout/list.h
+END
+windowtimeout.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/22/window_timeout/windowtimeout.dsp
+END
+windowtimeout.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mim_plugs/!svn/ver/22/window_timeout/windowtimeout.h
+END
+windowtimeout.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mim_plugs/!svn/ver/22/window_timeout/windowtimeout.dsw
+END
+list.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/22/window_timeout/list.c
+END
+options.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/22/window_timeout/options.c
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/22/window_timeout/resource.h
+END
+resources.rc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mim_plugs/!svn/ver/384/window_timeout/resources.rc
+END

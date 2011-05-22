@@ -1,0 +1,104 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT1 DIALOGEX 0, 0, 246, 219
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Replace HTML with BBCodes",IDC_CHK_BBCODES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,62,118,161,10
+    GROUPBOX        "Incoming Messages",IDC_STATIC,36,85,192,54
+    CONTROL         "Replace BBCodes with HTML",IDC_CHK_HTML,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,62,179,161,10
+    GROUPBOX        "Outgoing Messages",IDC_STATIC,36,145,192,54
+    GROUPBOX        "Apply To",IDC_STATIC,36,27,192,53
+    CONTROL         "Encode HTML",IDC_CHK_FILTEROUT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,161,161,10
+    CONTROL         "All contacts",IDC_CHK_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,42,161,10
+    CONTROL         "OTR encrypted sessions",IDC_CHK_OTR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,56,161,10
+    CONTROL         "Remove HTML",IDC_CHK_FILTERIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,101,161,10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPT1, DIALOG
+    BEGIN
+        VERTGUIDE, 36
+        VERTGUIDE, 53
+        VERTGUIDE, 62
+        BOTTOMMARGIN, 217
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral (Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,6 @@
+// MySpace (www.myspace.com) plugin for Miranda IM (miranda-im.org)
+
+// This software is Copyright (c) 2007 Scott Ellis (mail@scottellis.com.au)
+// http://www.scottellis.com.au
+// It is released under the General Public Licence, available here:
+// http://www.gnu.org/copyleft/gpl.html

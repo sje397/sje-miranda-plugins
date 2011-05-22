@@ -1,0 +1,80 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: pingproto - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP4C.tmp" with contents
+[
+/nologo /MD /W3 /GX /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "PINGPROTO_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /Fp"Release/pingproto.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\pingproto\options.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP4C.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP4D.tmp" with contents
+[
+ws2_32.lib wsock32.lib user32.lib gdi32.lib shell32.lib comdlg32.lib /nologo /base:"0x22050000" /dll /incremental:no /pdb:"Release/pingproto.pdb" /machine:I386 /out:"../../bin/release/plugins/pingproto.dll" /implib:"Release/pingproto.lib" 
+".\Release\icmp.obj"
+".\Release\log.obj"
+".\Release\menu.obj"
+".\Release\options.obj"
+".\Release\pinggraph.obj"
+".\Release\pinglist.obj"
+".\Release\pingproto.obj"
+".\Release\pingthread.obj"
+".\Release\rawping.obj"
+".\Release\StdAfx.obj"
+".\Release\utils.obj"
+".\Release\pingproto.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP4D.tmp"
+<h3>Output Window</h3>
+Compiling...
+options.cpp
+Linking...
+   Creating library Release/pingproto.lib and object Release/pingproto.exp
+
+
+
+<h3>Results</h3>
+pingproto.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: pingproto - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP51.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "PINGPROTO_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /Fp"Debug/pingproto.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\pingproto\options.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP51.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP52.tmp" with contents
+[
+user32.lib gdi32.lib ws2_32.lib shell32.lib comdlg32.lib /nologo /dll /incremental:yes /pdb:"Debug/pingproto.pdb" /debug /machine:I386 /out:"../../bin/debug/plugins/pingproto.dll" /implib:"Debug/pingproto.lib" /pdbtype:sept 
+".\Debug\icmp.obj"
+".\Debug\log.obj"
+".\Debug\menu.obj"
+".\Debug\options.obj"
+".\Debug\pinggraph.obj"
+".\Debug\pinglist.obj"
+".\Debug\pingproto.obj"
+".\Debug\pingthread.obj"
+".\Debug\rawping.obj"
+".\Debug\StdAfx.obj"
+".\Debug\utils.obj"
+".\Debug\pingproto.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP52.tmp"
+<h3>Output Window</h3>
+Compiling...
+options.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+pingproto.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,2 @@
+
+HANDLE SelectMeta(TCHAR *msg);

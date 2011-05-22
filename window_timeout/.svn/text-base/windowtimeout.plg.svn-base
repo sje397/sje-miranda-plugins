@@ -1,0 +1,68 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: windowtimeout - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP164.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "../../include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "WINDOWTIMEOUT_EXPORTS" /Fp"Release/windowtimeout.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\WindowTimeout\list.c"
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\WindowTimeout\windowtimeout.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP164.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP165.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Release/windowtimeout.pdb" /machine:I386 /out:"../../bin/release/plugins/windowtimeout.dll" /implib:"Release/windowtimeout.lib" 
+".\Release\list.obj"
+".\Release\options.obj"
+".\Release\windowtimeout.obj"
+".\Release\resources.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP165.tmp"
+<h3>Output Window</h3>
+Compiling...
+list.c
+windowtimeout.c
+Linking...
+   Creating library Release/windowtimeout.lib and object Release/windowtimeout.exp
+
+
+
+<h3>Results</h3>
+windowtimeout.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: windowtimeout - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP169.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "../../include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "WINDOWTIMEOUT_EXPORTS" /Fp"Debug/windowtimeout.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\WindowTimeout\list.c"
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\WindowTimeout\windowtimeout.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP169.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSP16A.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:yes /pdb:"Debug/windowtimeout.pdb" /debug /machine:I386 /out:"../../bin/debug/plugins/windowtimeout.dll" /implib:"Debug/windowtimeout.lib" /pdbtype:sept 
+".\Debug\list.obj"
+".\Debug\options.obj"
+".\Debug\windowtimeout.obj"
+".\Debug\resources.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSP16A.tmp"
+<h3>Output Window</h3>
+Compiling...
+list.c
+windowtimeout.c
+Linking...
+
+
+
+<h3>Results</h3>
+windowtimeout.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: exip - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB0.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "EXIP_EXPORTS" /Fp"Release/exip.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\exip\main.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB0.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB1.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Release/exip.pdb" /machine:I386 /out:"Release/exip.dll" /implib:"Release/exip.lib" 
+".\Release\getip.obj"
+".\Release\main.obj"
+".\Release\options.obj"
+".\Release\resource.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB1.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+Linking...
+   Creating library Release/exip.lib and object Release/exip.exp
+
+
+
+<h3>Results</h3>
+exip.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: exip - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB5.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "EXIP_EXPORTS" /Fp"Debug/exip.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\sje\My Documents\MyProjects\miranda\plugins\exip\main.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB5.tmp" 
+Creating temporary file "C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB6.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:yes /pdb:"Debug/exip.pdb" /debug /machine:I386 /out:"Debug/exip.dll" /implib:"Debug/exip.lib" /pdbtype:sept 
+".\Debug\getip.obj"
+".\Debug\main.obj"
+".\Debug\options.obj"
+".\Debug\resource.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sje\LOCALS~1\Temp\RSPB6.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+exip.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

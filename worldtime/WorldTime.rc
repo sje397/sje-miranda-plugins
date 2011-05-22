@@ -1,0 +1,196 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 327, 255
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Configuration",IDC_STATIC,7,7,313,241
+    GROUPBOX        "Interface",IDC_STATIC,28,16,272,75
+    CONTROL         "Show/hide with contact list (*if set, show/hide menu item has no effect)",IDC_CHK_MINMAX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,34,27,260,10
+    GROUPBOX        "Times",IDC_STATIC,28,155,272,87
+    LISTBOX         IDC_LIST_TIMES2,53,169,221,43,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Remove",IDC_BTN_REM,143,219,42,16,WS_DISABLED
+    CONTROL         "Format Date",IDC_CHK_FORMAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,34,59,72,10
+    EDITTEXT        IDC_ED_FORMAT,211,58,78,12,ES_AUTOHSCROLL
+    CTEXT           "and Time",IDC_STATIC,166,60,41,8
+    EDITTEXT        IDC_ED_DATE_FORMAT,111,58,51,12,ES_AUTOHSCROLL
+    CONTROL         "Show icons",IDC_CHK_ICONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,34,75,116,10
+    PUSHBUTTON      "Edit",IDC_BTN_EDIT,94,219,42,16,WS_DISABLED
+    PUSHBUTTON      "Add",IDC_BTN_ADD,45,219,42,16
+    PUSHBUTTON      "Up",IDC_BTN_UP,192,219,42,16,WS_DISABLED
+    PUSHBUTTON      "Down",IDC_BTN_DOWN,241,219,42,16,WS_DISABLED
+    CONTROL         "Hide main menu item (requires restart)",IDC_CHK_HIDEMENU,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,34,43,170,10
+    PUSHBUTTON      "Show Window",IDC_BTN_SHOW,211,40,78,13
+    GROUPBOX        "List",IDC_STATIC,28,94,272,59
+    RTEXT           "Font size:",IDC_STATICH,36,111,45,8
+    EDITTEXT        IDC_ED_FSIZE,86,109,32,14,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_RIGHT
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,108,12,15
+    CONTROL         "Custom1",IDC_TEXTCOL,"ColourPicker",WS_TABSTOP,164,117,40,9
+    CTEXT           "Text",IDC_STATICH2,161,105,44,9
+    CONTROL         "Custom1",IDC_BGCOL,"ColourPicker",WS_TABSTOP,217,117,40,9
+    CTEXT           "Background",IDC_STATIC,212,105,53,9
+    LTEXT           "Use the Customize/Fonts options to change text size and colour",IDC_STATFS,39,107,174,31,NOT WS_VISIBLE
+    RTEXT           "Indent:",IDC_STATIC,37,136,42,8
+    EDITTEXT        IDC_EDIT1,86,133,33,15,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SP_INDENT,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,133,12,15
+    RTEXT           "Row height:",IDC_STATIC,144,136,60,8
+    EDITTEXT        IDC_EDIT2,214,133,33,15,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SP_ROWHEIGHT,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,247,133,12,15
+END
+
+IDD_DIALOG2 DIALOG  0, 0, 296, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Time Details"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,95,202,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,150,202,50,14
+    LISTBOX         IDC_LIST_TIMES,43,39,208,46,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ED_DISP,43,92,208,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Label:",IDC_STATIC,68,123,20,8
+    EDITTEXT        IDC_ED_LABEL,94,121,133,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Alphabetical",IDC_RAD_ALPHA,"Button",BS_AUTORADIOBUTTON,88,25,55,10
+    CONTROL         "Geographical",IDC_RAD_GEO,"Button",BS_AUTORADIOBUTTON,151,25,58,10
+    LTEXT           "Sort Order:",IDC_STATIC,44,25,35,8
+    CONTROL         "DateTimePicker1",IDC_TIME_SUNRISE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,119,153,90,15
+    RTEXT           "Sunrise:",IDC_STATIC,49,155,54,8
+    CONTROL         "DateTimePicker1",IDC_TIME_SUNSET,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,119,173,90,15
+    RTEXT           "Sunset:",IDC_STATIC,49,176,54,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 289
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_CONTEXT MENU 
+BEGIN
+    MENUITEM "",                            65535
+    POPUP "test menu"
+    BEGIN
+        MENUITEM "Testing!!!",                  POPUP_TESTING
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_SUN            ICON                    "day.ico"
+IDI_ICON_SUNSET         ICON                    "sunset.ico"
+IDI_ICON_MOON           ICON                    "night.ico"
+IDI_ICON_SUNRISE        ICON                    "sunrise.ico"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

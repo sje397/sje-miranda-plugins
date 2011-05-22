@@ -1,0 +1,4 @@
+make sure VCPATH in the install.bat file is correct!
+
+this batch file can be run manually to install the wizard. 
+it is also run as a 'post-build' step when building the project.

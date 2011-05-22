@@ -1,0 +1,229 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPT DIALOGEX 0, 0, 308, 203
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "Username:",IDC_STATIC,11,15,42,8
+    RTEXT           "Password:",IDC_STATIC,158,15,47,8
+    RTEXT           "Host:",IDC_STATIC,21,32,32,8
+    EDITTEXT        IDC_ED_UNAME,57,12,96,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_PW,212,12,78,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_HOST,57,29,96,12,ES_AUTOHSCROLL
+    GROUPBOX        "Login",IDC_STATIC,7,1,293,60
+    RTEXT           "Name:",IDC_STATIC,11,79,42,8
+    RTEXT           "Number:",IDC_STATIC,158,79,47,8
+    EDITTEXT        IDC_ED_CIDNAME,57,76,96,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_CIDNUM,212,76,78,12,ES_AUTOHSCROLL
+    GROUPBOX        "Caller ID",IDC_STATIC,7,64,293,34
+    COMBOBOX        IDC_CMB_DEVIN,68,112,147,77,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Devices",IDC_STATIC,7,100,293,49
+    RTEXT           "Input:",IDC_STATIC,20,116,39,8
+    RTEXT           "Output:",IDC_STATIC,20,133,39,8
+    COMBOBOX        IDC_CMB_DEVOUT,68,129,147,77,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "*Source port:",IDC_STATIC,158,32,47,8
+    EDITTEXT        IDC_ED_PORT,212,29,41,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           "(*Changes will take effect after restart)",IDC_STATIC,75,47,158,8
+    GROUPBOX        "Call Window",IDC_STATIC,7,152,293,45
+    CONTROL         "",IDC_HK_DLG,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,57,169,80,14
+    RTEXT           "Hotkey:",IDC_STATIC,11,172,42,8
+    CONTROL         "Popup on incoming call",IDC_CHK_POPDIALIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,165,114,10
+    CONTROL         "Popup on outgoing call",IDC_CHK_POPDIALOUT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,178,114,10
+    CONTROL         "Mic boost",IDC_CHK_MICBOOST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,120,68,10
+END
+
+IDD_DIAL DIALOGEX 0, 0, 195, 153
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Dial"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_CMB_NUM,7,21,181,122,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "1",IDC_B1,49,77,19,14
+    PUSHBUTTON      "2",IDC_B2,72,77,19,14
+    PUSHBUTTON      "4",IDC_B4,49,93,19,14
+    PUSHBUTTON      "5",IDC_B5,72,93,19,14
+    PUSHBUTTON      "3",IDC_B3,94,77,19,14
+    PUSHBUTTON      "7",IDC_B7,49,109,19,14
+    PUSHBUTTON      "6",IDC_B6,94,93,19,14
+    PUSHBUTTON      "8",IDC_B8,72,109,19,14
+    PUSHBUTTON      "*",IDC_BSTAR,49,125,19,14
+    PUSHBUTTON      "9",IDC_B9,94,109,19,14
+    PUSHBUTTON      "0",IDC_B0,72,125,19,14
+    PUSHBUTTON      "#",IDC_BHASH,94,125,19,14
+    DEFPUSHBUTTON   "Call",IDC_BTN_CALL,132,77,50,14
+    PUSHBUTTON      "Hang Up",IDC_BTN_HANGUP,132,97,50,14
+    PUSHBUTTON      "Answer",IDC_BTN_ANSWER,132,118,50,14
+    EDITTEXT        IDC_ED_NAME,46,7,142,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Name:",IDC_STATIC,11,9,27,8
+    CONTROL         "1",IDC_L1,"Button",BS_OWNERDRAW | WS_TABSTOP,11,78,19,14
+    CONTROL         "2",IDC_L2,"Button",BS_OWNERDRAW | WS_TABSTOP,11,98,19,14
+    CONTROL         "3",IDC_L3,"Button",BS_OWNERDRAW | WS_TABSTOP,11,119,19,14
+    GROUPBOX        "Line",IDC_STATIC,7,63,28,83
+    GROUPBOX        "Keypad",IDC_STATIC,40,63,80,83
+    GROUPBOX        "Function",IDC_STATIC,125,63,63,83
+    CONTROL         "",IDC_SLD_IN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,0,41,98,12
+    CONTROL         "",IDC_SLD_OUT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,96,41,97,12
+    CONTROL         "",IDC_PRG_IN,"msctls_progress32",WS_BORDER,7,54,86,6
+    CONTROL         "",IDC_PRG_OUT,"msctls_progress32",WS_BORDER,102,54,86,6
+    LTEXT           "Input",IDC_STATIC,16,35,44,8
+    LTEXT           "Output",IDC_STATIC,116,35,44,8
+END
+
+IDD_OPT_CODEC DIALOGEX 0, 0, 268, 153
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_CHK_ULAW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,37,10,10
+    CONTROL         "",IDC_CHK_ALAW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,49,10,10
+    CONTROL         "",IDC_CHK_GSM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,61,10,10
+    CONTROL         "",IDC_CHK_SPEEX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,73,10,10
+    CONTROL         "",IDC_CHK_ILBC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,85,10,10
+    CTEXT           "Changes will take effect after restart",IDC_STATIC,48,117,171,8
+    RTEXT           "ULAW",IDC_STATIC,65,39,32,8
+    RTEXT           "ALAW",IDC_STATIC,65,51,32,8
+    RTEXT           "GSM",IDC_STATIC,65,63,32,8
+    RTEXT           "Speex",IDC_STATIC,65,75,32,8
+    RTEXT           "iLBC",IDC_STATIC,65,87,32,8
+    CTEXT           "Allowed",IDC_STATIC,122,18,35,8
+    CTEXT           "Preferred",IDC_STATIC,166,18,35,8
+    GROUPBOX        "",IDC_STATIC,7,7,254,139
+    CONTROL         "",IDC_CHK_ULAW_P,"Button",BS_AUTORADIOBUTTON,179,37,10,10
+    CONTROL         "",IDC_CHK_ALAW_P,"Button",BS_AUTORADIOBUTTON,179,49,10,10
+    CONTROL         "",IDC_CHK_GSM_P,"Button",BS_AUTORADIOBUTTON,179,61,10,10
+    CONTROL         "",IDC_CHK_SPEEX_P,"Button",BS_AUTORADIOBUTTON,179,73,10,10
+    CONTROL         "",IDC_CHK_ILBC_P,"Button",BS_AUTORADIOBUTTON,179,85,10,10
+END
+
+IDD_ADDCONTACT DIALOGEX 0, 0, 186, 76
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "New IAX Contact"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,40,55,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,55,50,14
+    RTEXT           "Name:",IDC_STATIC,21,13,42,8
+    RTEXT           "Number:",IDC_STATIC,16,35,47,8
+    EDITTEXT        IDC_ED_NAME,73,11,96,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_NUM,73,33,96,12,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_DIAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_OPT_CODEC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_ADDCONTACT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PROTO               ICON                    "icon1.ico"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

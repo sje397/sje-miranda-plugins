@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/mim_plugs/!svn/ver/384/attache
+END
+FileInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/4/attache/FileInfo.h
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mim_plugs/!svn/ver/4/attache/options.h
+END
+FieldInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/4/attache/FieldInfo.h
+END
+minidump.rc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/384/attache/minidump.rc
+END
+UploadSettings.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/4/attache/UploadSettings.cpp
+END
+DebugTools.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/59/attache/DebugTools.cpp
+END
+version.rc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/4/attache/version.rc
+END
+resource.rc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/4/attache/resource.rc
+END
+UploadSettings.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/4/attache/UploadSettings.h
+END
+Uploader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/4/attache/Uploader.cpp
+END
+UploadResults.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/4/attache/UploadResults.h
+END
+DebugTools.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/4/attache/DebugTools.h
+END
+UploadProgress.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mim_plugs/!svn/ver/4/attache/UploadProgress.h
+END
+Uploader.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/4/attache/Uploader.h
+END
+MiniDump.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mim_plugs/!svn/ver/139/attache/MiniDump.cpp
+END
+MiniDump_8.sln
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/36/attache/MiniDump_8.sln
+END
+MiniDump.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/4/attache/MiniDump.h
+END
+EnforceFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mim_plugs/!svn/ver/4/attache/EnforceFilter.cpp
+END
+str_utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mim_plugs/!svn/ver/4/attache/str_utils.cpp
+END
+MiniDump_8.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mim_plugs/!svn/ver/33/attache/MiniDump_8.vcproj
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/128/attache/version.h
+END
+options.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mim_plugs/!svn/ver/49/attache/options.cpp
+END
+EnforceFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mim_plugs/!svn/ver/4/attache/EnforceFilter.h
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/4/attache/resource.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mim_plugs/!svn/ver/128/attache/common.h
+END
+str_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mim_plugs/!svn/ver/4/attache/str_utils.h
+END
